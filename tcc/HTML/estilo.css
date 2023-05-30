@@ -1,6 +1,6 @@
 body{
     /*background-color: rgba(100, 9, 44, 0.952);*/
-    background-image: linear-gradient(black, purple);
+    background-image: linear-gradient(black, #260608);
     padding-bottom: -10px;
     display: flex;
     flex-direction: column;
@@ -572,7 +572,17 @@ body{
     margin-left: 115px;
     margin-top: 20px;
 }
-
+.space_2 {
+    width: 100%;
+  }
+  
+.space_3 {
+    width: 100%;
+  }
+  
+.foot_index{
+    width: 100%;
+}
 
 
 
