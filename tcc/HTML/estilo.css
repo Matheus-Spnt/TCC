@@ -663,11 +663,16 @@ body{
     border-radius: 10px;
 }
 
+.titilo_vota{
+    color: white;
+    
+}
+
 .grafico_result{
     width: 950px;
     height: 560px;
     margin-left: 100px;
-    margin-top: -500px;
+    margin-top: -450px;
     margin-bottom: 50px;
 }
 
@@ -678,7 +683,7 @@ body{
     width: 950px;
     height: 560px;
     margin-left: 150px;
-    margin-top: -550px;
+    margin-top: -500px;
     margin-bottom: 50px;
     overflow: hidden;
   }
@@ -765,14 +770,118 @@ body{
     margin-top: 20px;
 }
 
+/* home_sc */
 
+.box_resul_3{
+    /* background-color: #750f16; */
+    /*background-image: linear-gradient(#750f16, #750f16);*/
+    background-color: rgba(255, 255, 255,0.20);
+    width: 950px;
+    height: 350px;
+    margin-left: 150px;
+    margin-top: -475px;
+    border: 5px;
+    border-width: 2px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
 
+.campo_voto_fc_4{
+    height: 100px;
+    width: 980px;
+    margin-left: -10px;
+    margin-top: 40px;
+}
 
+.cria_log_2{
+    float: left;
+    height: 254px;
+    width: 254px;
+    margin-left: 75px;
+    border-radius: 25px;
+}
 
+.img_mid{
+    height: 254px;
+    width: 254px;
+    border-radius: 25px;
+    float: left;
+}
 
+.texto_mini{
+    height: 40px;
+    width: 150px;
+    margin-left: 275px;
+    color: white;
+}
 
+.par_mini{
+    height: 200px;
+    width: 450px;
+    color: white;
+    margin-left: 275px;
+}
 
+.v_btn_4{
+    clear: left;
+    width: 75px;
+    height: 25px;
+    margin-left: 850px;
+    margin-top: 150px;
+}
 
+.v_btn_5{
+    height: 25px;
+    width: 75px;
+    color: white;
+    background-color: #750f16;
+    margin-left: 0px;
+    margin-top: 0px;
+    outline-offset: 0px;
+    outline: #750f16;
+}
+
+.titulo_reco{
+    clear: left;
+    width: 194px;
+    height: 38px;
+    margin-bottom: -50px;
+    margin-left: 80px;
+    color: white;
+    
+}
+
+.titulo_reco_2{
+    clear: left;
+    width: 194px;
+    height: 38px;
+    margin-bottom: -50px;
+    margin-left: 80px;
+    color: white;
+    
+}
+
+.v_texto_1{
+    color: white;
+    margin-left: 845px;
+    margin-top: 0px;
+    padding-top: 225px;
+    margin-bottom: -150px;
+}
+
+.box_resul_4{
+    /* background-color: #750f16; */
+    /* background-image: linear-gradient(#750f16, #750f16); */
+    background-color: rgba(255, 255, 255,0.20);
+    width: 950px;
+    height: 350px;
+    margin-left: 150px;
+    margin-top: 75px;
+    border: 5px;
+    border-width: 2px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
 
 
 
