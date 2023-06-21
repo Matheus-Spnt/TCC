@@ -559,13 +559,15 @@ body{
 .res_1{
     margin-left: 50px;
     margin-top: -15px;
-    float: left;
+    
 }
 
 .per_2{
     margin-left: 50px;
     margin-top: 0px;
-    padding-top: 20px;
+    width: 650px;
+    height: 20px;
+    padding-top: 0px;
 }
 
 .res_2{
