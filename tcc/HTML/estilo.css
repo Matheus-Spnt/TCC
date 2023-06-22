@@ -687,8 +687,7 @@ body{
 }
 
 .grafico_result{
-    width: 950px;
-    height: 700px;
+   
     margin-left: 100px;
     margin-top: -450px;
     margin-bottom: 50px;
@@ -929,7 +928,7 @@ body{
 
 .v_texto_1{
     color: white;
-    margin-left: 845px;
+    margin-left: 833px;
     margin-top: 0px;
     padding-top: 225px;
     margin-bottom: -150px;
