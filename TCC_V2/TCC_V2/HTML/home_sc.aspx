@@ -37,8 +37,10 @@
             
             <div class="cria_log_2" >
                 <img class="img_mid" src="" >
-                <h3 class="texto_mini" >Tema: Presidente</h3>
-                <p class="par_mini" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam</p>
+                <%--<h3 class="texto_mini" >Tema: Presidente</h3>--%>
+                <asp:Label ID="lbl_ti1" class="texto_mini" runat="server" Text="Tema: Presidente"></asp:Label>
+                <%--<p class="par_mini" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam</p>--%>
+                <asp:Label ID="lbl_par1" class="par_mini" runat="server" Text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam"></asp:Label>
             </div>
             <div class="v_btn_4">
                 <form action="voto_sc.aspx" target="_self" >
@@ -55,8 +57,10 @@
         <div class="campo_voto_fc_4">                
             <div class="cria_log_2" >
                 <img class="img_mid" src="" >
-                <h3 class="texto_mini" >Tema: Governador</h3>
-                <p class="par_mini" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam</p>
+                <%--<h3 class="texto_mini" >Tema: Governador</h3>--%>
+                <asp:Label ID="lbl_ti2" class="texto_mini" runat="server" Text="Tema: Governador"></asp:Label>
+                <%--<p class="par_mini" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam</p>--%>
+                <asp:Label ID="lbl_par2" class="par_mini" runat="server" Text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam"></asp:Label>
             </div>
             <p class="v_texto_1" >Em Andamento</p>
             <div class="v_btn_4">
@@ -70,8 +74,10 @@
         <div class="campo_voto_fc_4">                
             <div class="cria_log_2" >
                 <img class="img_mid" src="" >
-                <h3 class="texto_mini" >Tema: Senador</h3>
-                <p class="par_mini" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam</p>
+                <%--<h3 class="texto_mini" >Tema: Senador</h3>--%>
+                <asp:Label ID="lbl_ti3" class="texto_mini" runat="server" Text="Tema: Senador"></asp:Label>
+                <%--<p class="par_mini" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam</p>--%>
+                <asp:Label ID="lbl_par3" class="par_mini" runat="server" Text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam"></asp:Label>
             </div>
             <p class="v_texto_2" >Finalizado</p>
             <div class="v_btn_4">
