@@ -29,11 +29,15 @@
     </div>
     <div class="campo_voto_ab">
         <p class="per_1">Nome: </p>
-        <p class="res_1">Amanda Ramos</p>
+        <%--<p class="res_1">Amanda Ramos</p>--%>
+        <asp:Label ID="lbl_nm" class="res_1" runat="server" Text="Amanda Ramos"></asp:Label>
         <p class="per_2">Partido: </p>
-        <p class="res_2">Coalização</p>
+        <%--<p class="res_2">Coalização</p>--%>
+        <asp:Label ID="lbl_part" class="res_2" runat="server" Text="Coalização"></asp:Label>
         <p class="per_3">Número: </p>
-        <p class="res_3">38</p>
+        <%--<p class="res_3">38</p>--%>
+        <asp:Label ID="lbl_num" class="res_3" runat="server" Text="38"></asp:Label>
+
         <!-- <img class="candidato_img" > -->
         
     </div>
@@ -45,9 +49,12 @@
         <p class="per_1">Nome: </p>
         <p class="res_1">Antonio Marcos</p>
         <p class="per_2">Partido: </p>
-        <p class="res_2">Arcas</p>
+        <%--<p class="res_2">Arcas</p>--%>
+        <asp:Label ID="lbl_part2" class="res_2" runat="server" Text="Arcas"></asp:Label>
         <p class="per_3">Número: </p>
-        <p class="res_3">38</p>
+        <%--<p class="res_3">38</p>--%>
+        <asp:Label ID="lbl_num2" class="res_3" runat="server" Text="38"></asp:Label>
+
         <!-- <img class="candidato_img" > -->
         
     </div>
