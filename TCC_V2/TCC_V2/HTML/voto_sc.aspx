@@ -47,7 +47,8 @@
     </div>
     <div class="campo_voto_ab">
         <p class="per_1">Nome: </p>
-        <p class="res_1">Antonio Marcos</p>
+        <%--<p class="res_1">Antonio Marcos</p>--%>
+        <asp:Label ID="lbl_nm2" class="res_1" runat="server" Text="Antonio Marcos"></asp:Label>
         <p class="per_2">Partido: </p>
         <%--<p class="res_2">Arcas</p>--%>
         <asp:Label ID="lbl_part2" class="res_2" runat="server" Text="Arcas"></asp:Label>
@@ -64,11 +65,14 @@
     </div>
     <div class="campo_voto_ab">
         <p class="per_1">Nome: </p>
-        <p class="res_1">Mariana Cruz</p>
+        <%--<p class="res_1">Mariana Cruz</p>--%>
+        <asp:Label ID="lbl_nm3" class="res_1" runat="server" Text="Mariana Cruz"></asp:Label>
         <p class="per_2">Partido: </p>
-        <p class="res_2">DSR</p>
+        <%--<p class="res_2">DSR</p>--%>
+        <asp:Label ID="lbl_part3" class="res_2" runat="server" Text="DSR"></asp:Label>
         <p class="per_3">Número: </p>
-        <p class="res_3">50</p>
+        <%--<p class="res_3">50</p>--%>
+        <asp:Label ID="lbl_num3" class="res_3" runat="server" Text="50"></asp:Label>
         <!-- <img class="candidato_img" > -->
         
     </div>
@@ -78,19 +82,24 @@
     </div>
     <div class="campo_voto_ab">
         <p class="per_1">Nome: </p>
-        <p class="res_1">Fábio de Oliveira</p>
+        <%--<p class="res_1">Fábio de Oliveira</p>--%>
+        <asp:Label ID="lbl_nm4" class="res_1" runat="server" Text="Fabio de Oliveira"></asp:Label>
         <p class="per_2">Partido: </p>
-        <p class="res_2">Federação</p>
+        <%--<p class="res_2">Federação</p>--%>
+        <asp:Label ID="lbl_part4" class="res_2" runat="server" Text="Federacao"></asp:Label>
         <p class="per_3">Número: </p>
-        <p class="res_3">95</p>
+        <%--<p class="res_3">95</p>--%>
+        <asp:Label ID="lbl_num4" class="res_3" runat="server" Text="95"></asp:Label>
         <!-- <img class="candidato_img" > -->
         
     </div>
     <div class="v_btn">
         <form action="home_sc.html" target="_self">
-            <input class="v_btn_" type="checkbox" name="conf"> 
+            <%--<input class="v_btn_" type="checkbox" name="conf">--%>
+            <asp:CheckBox ID="chb_1" class="v_btn_" runat="server" />
             <label style="color: white; margin-left: -80px; margin-top: 10px;" for="conf">Confirmo votar nesse candidato</label><br>
-            <input class="v_btn_1" type="submit" value="Votar">
+            <%--<input class="v_btn_1" type="submit" value="Votar">--%>
+            <asp:Button class="v_btn_1" ID="btn_votar" runat="server" Text="Votar" />
         </form>
     </div>
 </body>
