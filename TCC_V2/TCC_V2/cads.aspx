@@ -52,6 +52,7 @@
                 <asp:Button class="btn2" ID="btn_cad" runat="server" Text="Cadastrar" />
 
             </form>
+            <asp:Label ID="lblMsg" class="mens" runat="server" Text=""></asp:Label>
         </div>
             
     </div>

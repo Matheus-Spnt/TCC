@@ -57,3 +57,4 @@ C:\Users\Dell\Downloads\22\TCC\TCC_V2\TCC_V2\obj\Debug\TCC_V2.csproj.CoreCompile
 C:\Users\Dell\Downloads\22\TCC\TCC_V2\TCC_V2\obj\Debug\TCC_V2.csproj.CopyComplete
 C:\Users\Dell\Downloads\22\TCC\TCC_V2\TCC_V2\obj\Debug\TCC_V2.dll
 C:\Users\Dell\Downloads\22\TCC\TCC_V2\TCC_V2\obj\Debug\TCC_V2.pdb
+C:\Users\Dell\Downloads\22\TCC\TCC_V2\TCC_V2\bin\MySql.Data.dll
