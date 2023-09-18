@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarefa-result",
+      "appliesTo": "TCC_V2/TCC_V2/HTML/result.aspx",
+      "type": "launch"
+    }
+  ]
+}

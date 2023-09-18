@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data">
+      <HintPath>E:\Bgl velho\Aleatoriedades\ETEC\TECNICO\3N - PCO\projetos\1ºSe\prj1\Series\Site\prj_series pronto\prj_series\bin\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,10 +70,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cads.aspx" />
+    <Content Include="criar_sc.aspx" />
+    <Content Include="estilo.css" />
+    <Content Include="home_sc.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="loading_sc.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="result.aspx" />
+    <Content Include="result_2.aspx" />
+    <Content Include="user_sc.aspx" />
+    <Content Include="voto_sc.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cls_con_banco_31682.cs" />
+    <Compile Include="cls_dado_banco_31682.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="result.aspx.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="result_2.aspx.cs">
+      <DependentUpon>result_2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
