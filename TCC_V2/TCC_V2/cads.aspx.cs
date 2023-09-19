@@ -11,7 +11,15 @@ namespace TCC_V2
 {
     public partial class cads
     {
-        protected global::System.Web.UI.WebControls.TextBox txtnmserie;
+        protected global::System.Web.UI.WebControls.TextBox cad_user;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_nasc;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_ender;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_titulo;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_zona;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_sec;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_pass1;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_pass2;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_cpf;
         protected global::System.Web.UI.WebControls.Label lblMsg;
     }
 
@@ -30,20 +38,21 @@ namespace TCC_V2
         private void btnenviar(object sender, EventArgs e)
         {
             #region Teste
-            if (txtnmserie.Text == "") { lblMsg.Text = "Nome da série é Obrigatório!"; return; }
-            if (txtnmor.Text == "") { lblMsg.Text = "Nome original da série é Obrigatório!"; return; }
-            if (txtdesc.Text == "") { lblMsg.Text = "Descrição é Obrigatória!"; return; }
-            if (txtsit.Text == "") { lblMsg.Text = "Situação da série é Obrigatória!"; return; }
-            if (txtprinc.Text == "") { lblMsg.Text = "Nome do personagem principal da série é Obrigatório!"; return; }
-            if (txtprinc2.Text == "") { lblMsg.Text = "Nome do personagem principal da série é Obrigatório!"; return; }
-            if (txtcod.Text == "") { lblMsg.Text = "Nome do personagem coadijuvante da série é Obrigatório!"; return; }
-            if (txtcod2.Text == "") { lblMsg.Text = "Nome do personagem coadijuvante da série é Obrigatório!"; return; }
-            if (txtaprinc.Text == "") { lblMsg.Text = "Nome do ator(atriz) principal da série é Obrigatório!"; return; }
-            if (txtaprinc2.Text == "") { lblMsg.Text = "Nome do ator(atriz) principal da série é Obrigatório!"; return; }
-            if (txtacod.Text == "") { lblMsg.Text = "Nome do ator(atriz) coadijuvante da série é Obrigatório!"; return; }
-            if (txtacod2.Text == "") { lblMsg.Text = "Nome do ator(atriz) coadijuvante da série é Obrigatório!"; return; }
-            if (txtlan.Text == "") { lblMsg.Text = "Data de inicio da série é Obrigatório!"; return; }
-            if (txtfim.Text == "") { lblMsg.Text = "Data de fim da série é Obrigatório!"; return; }
+            if (cad_user.Text == "") { lblMsg.Text = "Nome do usuário é Obrigatório!"; return; }
+            if (cad_user_nasc.Text == "") { lblMsg.Text = "Data de nascimento é Obrigatório!"; return; }
+            if (cad_user_ender.Text == "") { lblMsg.Text = "Endereço é Obrigatório!"; return; }
+            if (cad_user_titulo.Text == "") { lblMsg.Text = "Titulo de Eleitor é Obrigatório!"; return; }
+            if (cad_user_zona.Text == "") { lblMsg.Text = "Numero da zona é Obrigatório!"; return; }
+            if (cad_user_sec.Text == "") { lblMsg.Text = "Numero da seção é Obrigatório!"; return; }
+            if (cad_user_pass1.Text == "") { lblMsg.Text = "Senha é Obrigatório!"; return; }
+            if (cad_user_pass2.Text == "") { lblMsg.Text = "Confirmar senha é Obrigatório!"; return; }
+            if (cad_user_cpf.Text == "") { lblMsg.Text = "RG do usuário é Obrigatório!"; return; }
+
+            if (cad_user_pass1.Text != cad_user_pass2.Text)
+            {
+                lblMsg.Text = "Ambas as senhas devem ser iguais";
+            }
+
             #endregion
 
             string newcode = "1";
@@ -67,7 +76,7 @@ namespace TCC_V2
             if (!dados.IsClosed) { dados.Close(); }
             #endregion
 
-            string comando = "insert into produto values (" + newcode + ",'" + txtnmserie.Text + "'," + txtnmor.Text + "'," + txtsit.Text + "'," + txtdesc.Text + "'," + txtprinc.Text + "'," + txtprinc2.Text + "'," + txtcod.Text + "'," + txtcod2.Text + "'," + txtaprinc.Text + "'," + txtaprinc2.Text + "'," + txtacod.Text + "'," + txtacod2.Text + "'," + txtlan.Text + "'," + txtfim.Text + ",@foto)";
+            string comando = "insert into eleitor values (" + newcode + ",'" + cad_user.Text + "'," + cad_user_nasc.Text + "'," + cad_user_cpf.Text + "'," + cad_user_ender.Text + "'," + cad_user_titulo.Text + "'," + cad_user_zona.Text + "'," + cad_user_sec.Text + "'," + cad_user_pass1.Text + ")";
 
             if (!banco.Executar(comando))
             {
@@ -75,8 +84,11 @@ namespace TCC_V2
                 banco.Closing();
                 return;
             }
-
-            Response.Redirect("~/login.aspx");
+            else
+            {
+                Response.Redirect("~/login.aspx");
+            }
+            
 
         }
 
