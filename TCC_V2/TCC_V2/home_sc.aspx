@@ -31,15 +31,15 @@
         <p class="vota_txt_2" >Resultados</p>
         <!-- <p class="vota_txt_2" >Criar</p> -->
     </div>
-    
-    <div class="box_resul_3" >
+    <asp:Panel ID="Panel1" runat="server">
+    <%--<div class="box_resul_3" >
         <div class="campo_voto_fc_4">
             
             <div class="cria_log_2" >
                 <img class="img_mid" src="" >
-                <%--<h3 class="texto_mini" >Tema: Presidente</h3>--%>
+                <h3 class="texto_mini" >Tema: Presidente</h3>
                 <asp:Label ID="lbl_ti1" class="texto_mini" runat="server" Text="Tema: Presidente"></asp:Label>
-                <%--<p class="par_mini" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam</p>--%>
+                <p class="par_mini" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam</p>
                 <asp:Label ID="lbl_par1" class="par_mini" runat="server" Text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore officiis illo voluptas magnam, magni tenetur numquam"></asp:Label>
             </div>
             <div class="v_btn_4">
@@ -49,10 +49,11 @@
             </div>
             
         </div>
-    </div>
-
+    </div>--%>
+    </asp:Panel>
     <h2 class="titulo_reco_2" >Votacoes</h2>
-
+    
+    <asp:Panel ID="Panel2" runat="server">
     <div class="box_resul_4" >
         <div class="campo_voto_fc_4">                
             <div class="cria_log_2" >
@@ -70,6 +71,9 @@
             </div>            
         </div>
     </div>
+    </asp:Panel>
+    
+    <asp:Panel ID="Panel3" runat="server">
     <div class="box_resul_4" >
         <div class="campo_voto_fc_4">                
             <div class="cria_log_2" >
@@ -87,6 +91,7 @@
             </div>            
         </div>
     </div>
+    </asp:Panel>
     </form>
 </body>
 </html>

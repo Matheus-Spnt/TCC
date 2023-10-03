@@ -37,7 +37,7 @@
         <p class="per_3">Número: </p>
         <%--<p class="res_3">38</p>--%>
         <asp:Label ID="lbl_num" class="res_3" runat="server" Text="38"></asp:Label>
-
+        <asp:RadioButton ID="rbd_1" runat="server" Text="Votar nesse candidato" />
         <!-- <img class="candidato_img" > -->
         
     </div>
@@ -55,7 +55,7 @@
         <p class="per_3">Número: </p>
         <%--<p class="res_3">38</p>--%>
         <asp:Label ID="lbl_num2" class="res_3" runat="server" Text="38"></asp:Label>
-
+        <asp:RadioButton ID="rbd_3" runat="server" Text="Votar nesse candidato" />
         <!-- <img class="candidato_img" > -->
         
     </div>
@@ -73,6 +73,7 @@
         <p class="per_3">Número: </p>
         <%--<p class="res_3">50</p>--%>
         <asp:Label ID="lbl_num3" class="res_3" runat="server" Text="50"></asp:Label>
+        <asp:RadioButton ID="rbd_3" runat="server" Text="Votar nesse candidato" />
         <!-- <img class="candidato_img" > -->
         
     </div>
@@ -90,6 +91,7 @@
         <p class="per_3">Número: </p>
         <%--<p class="res_3">95</p>--%>
         <asp:Label ID="lbl_num4" class="res_3" runat="server" Text="95"></asp:Label>
+        <asp:RadioButton ID="rdb_4" runat="server" Text="Votar nesse candidato" />
         <!-- <img class="candidato_img" > -->
         
     </div>
@@ -101,6 +103,7 @@
             <%--<input class="v_btn_1" type="submit" value="Votar">--%>
             <asp:Button class="v_btn_1" ID="btn_votar" runat="server" Text="Votar" />
         </form>
+        <asp:Label ID="lblMsg" class="mens" runat="server" Text=""></asp:Label>
     </div>
 </body>
 </html>

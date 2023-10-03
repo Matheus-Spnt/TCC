@@ -20,6 +20,7 @@ namespace TCC_V2
         protected global::System.Web.UI.WebControls.TextBox cad_user_pass1;
         protected global::System.Web.UI.WebControls.TextBox cad_user_pass2;
         protected global::System.Web.UI.WebControls.TextBox cad_user_cpf;
+        //protected global::System.Web.UI.WebControls.Button btn_cad;
         protected global::System.Web.UI.WebControls.Label lblMsg;
     }
 
@@ -35,7 +36,7 @@ namespace TCC_V2
         }
 
 
-        private void btnenviar(object sender, EventArgs e)
+        private void btn_cad(object sender, EventArgs e)
         {
             #region Teste
             if (cad_user.Text == "") { lblMsg.Text = "Nome do usuário é Obrigatório!"; return; }
@@ -59,7 +60,7 @@ namespace TCC_V2
             MySqlDataReader dados = null;
 
             #region Next code
-            if (!banco.Consult("Select max(cd_serie)+1 from serie", ref dados))
+            if (!banco.Consult("Select max(id_nome)+1 from eleitor", ref dados))
             {
                 lblMsg.Text = "Problemas na consula ao servidor";
                 banco.Closing();
@@ -76,7 +77,7 @@ namespace TCC_V2
             if (!dados.IsClosed) { dados.Close(); }
             #endregion
 
-            string comando = "insert into eleitor values (" + newcode + ",'" + cad_user.Text + "'," + cad_user_nasc.Text + "'," + cad_user_cpf.Text + "'," + cad_user_ender.Text + "'," + cad_user_titulo.Text + "'," + cad_user_zona.Text + "'," + cad_user_sec.Text + "'," + cad_user_pass1.Text + ")";
+            string comando = "insert into eleitor values (" + newcode + ",'" + cad_user.Text + "'," + cad_user_nasc.Text + "," + cad_user_cpf.Text + ",'" + cad_user_ender.Text + "'," + cad_user_titulo.Text + "," + cad_user_zona.Text + "," + cad_user_sec.Text + "," + cad_user_pass1.Text + ")";
 
             if (!banco.Executar(comando))
             {
