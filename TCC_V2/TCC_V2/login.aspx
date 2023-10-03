@@ -34,6 +34,7 @@
                 <%--<input class="btn1" type="submit" value="Entrar">--%>
                 <asp:Button class="btn1" ID="btn_log" runat="server" Text="Entrar" />
             </form>
+            <asp:Label ID="lblMsg" class="mens" runat="server" Text=""></asp:Label>
         </div>
     </div>
    </form>

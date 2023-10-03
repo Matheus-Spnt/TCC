@@ -11,6 +11,7 @@ namespace TCC_V2
 {
     public partial class result
     {
+        protected global::System.Web.UI.WebControls.Label lbl_text1;
         protected global::System.Web.UI.WebControls.Panel Panel1;
         protected global::System.Web.UI.WebControls.Label lbl_can2;
         protected global::System.Web.UI.WebControls.Label lbl_can3;
@@ -19,19 +20,44 @@ namespace TCC_V2
 
     public partial class result : System.Web.UI.Page
     {
-
-
+        String[] guarda = new String[4];
+        String[] guarda2 = new String[4];
+        eleicao elect1;
         cls_dado_banco_31682.cls_dado_banco_31682 banco = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            int i = 0;
+
             banco = new cls_dado_banco_31682.cls_dado_banco_31682();
             banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
             MySqlDataReader dados = null;
 
+            if (!banco.Consult("select c.id_candidato, e.id_eleicao, e.titulo from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
+            {
+                Panel msg = new Panel();
+                Label lbl_can1_msg = new Label();
+                lbl_can1_msg.CssClass = "user_name_3";
+                lbl_can1_msg.Text = "Problemas na consulta ao servidor";
+                msg.Controls.Add(lbl_can1_msg);
+                Panel1.Controls.Add(msg);
+                banco.Closing();
+                return;
+            }
+            if (dados.HasRows)
+            {
+                while (dados.Read() || i < 4)
+                {
+                    guarda[i] = dados["c.id_candidato"].ToString();
+                    guarda2[i] = dados["e.titulo"].ToString();
+                    i++;
+                }
+                lbl_text1.Text = guarda2[3];
+            }
 
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_candidato = 1 and c.id_eleicao = 1;", ref dados))
+
+            #region Candidato1
+            if (!banco.Consult("select c.nm_candidato, c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_candidato = " + guarda[0] + " and c.id_eleicao = 1;", ref dados))
             {
                 Panel msg = new Panel();
                 Label lbl_can1_msg = new Label();
@@ -55,10 +81,10 @@ namespace TCC_V2
                     Panel1.Controls.Add(can1);
                 }
             }
+            #endregion
 
-            
-
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_candidato = 2 and c.id_eleicao = 21;", ref dados))
+            #region Candidato2
+            if (!banco.Consult("select c.nm_candidato, c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_candidato = " + guarda[1] + " and c.id_eleicao = " + elect1.GetEleicaoId() + " ;", ref dados))
             {
                 lbl_can2.Text = "Problemas na consulta ao servidor";
                 banco.Closing();
@@ -73,8 +99,10 @@ namespace TCC_V2
 
                 }
             }
+            #endregion
 
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_candidato = 3 and c.id_eleicao = 1;", ref dados))
+            #region Candidato3
+            if (!banco.Consult("select c.nm_candidato, c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_candidato = " + guarda[2] + " and c.id_eleicao = 1;", ref dados))
             {
                 lbl_can3.Text = "Problemas na consulta ao servidor";
                 banco.Closing();
@@ -90,8 +118,10 @@ namespace TCC_V2
 
                 }
             }
+            #endregion
 
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_candidato = 4 and c.id_eleicao = 1;", ref dados))
+            #region Candidato4
+            if (!banco.Consult("select c.nm_candidato, c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_candidato = " + guarda[3] + " and c.id_eleicao = 1;", ref dados))
             {
                 lbl_can4.Text = "Problemas na consulta ao servidor";
                 banco.Closing();
@@ -107,8 +137,7 @@ namespace TCC_V2
 
                 }
             }
-
-
+            #endregion
         }
     }
 }
