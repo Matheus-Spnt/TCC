@@ -22,7 +22,7 @@
         </div>
         <div class="bar"></div>
         <div class="log2">
-            <form action="login.aspx" target="_self" >
+            <%--<form action="login.aspx" target="_self" >--%>
                 <p style="font-size: 25px; margin-left: 40px; color:white;" >Cadastro</p>
                 <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Nome:</p>  
                 <%--<input class="user1" type="text" name="Usuário" placeholder="João da Silva"> --%>
@@ -54,7 +54,7 @@
                 <%--<input class="btn2" type="submit" value="Entrar">--%>
                 <asp:Button class="btn2" ID="btn_cad" runat="server" Text="Cadastrar" />
 
-            </form>
+            <%--</form>--%>
             <asp:Label ID="lblMsg" class="mens" runat="server" Text=""></asp:Label>
         </div>
             

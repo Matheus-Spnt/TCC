@@ -138,3 +138,81 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+-- Dados de teste para a tabela eleitor
+INSERT INTO eleitor (nome_eleitor, data_nascimento, cpf, endereco, titulo_eleitor, zona_eleitoral, secao_eleitoral, senha) 
+VALUES 
+('João Silva', '1990-05-15', '12345678901', 'Rua A, 123', '123456789012', 1, 1, 'senha123'),
+('Maria Oliveira', '1985-02-20', '23456789012', 'Rua B, 456', '234567890123', 2, 2, 'senha456');
+-- Adicione mais eleitores conforme necessário
+
+-- Dados de teste para a tabela partido
+INSERT INTO partido (nome, sigla) 
+VALUES 
+('Partido A', 'PA'),
+('Partido B', 'PB');
+-- Adicione mais partidos conforme necessário
+
+-- Dados de teste para a tabela eleicao
+INSERT INTO eleicao (titulo, data_inicio, data_termino, local, descricao_eleicao) 
+VALUES 
+('Eleição Municipal 2023', '2023-11-01', '2023-11-15', 'Local A', 'Eleição para prefeito e vereadores'),
+('Eleição Estadual 2023', '2023-12-01', '2023-12-15', 'Local B', 'Eleição para governador e deputados estaduais');
+-- Adicione mais eleições conforme necessário
+
+-- Dados de teste para a tabela candidato
+INSERT INTO candidato (nome_candidato, numero_urna, partido_id_partido, eleicao_id_eleicao) 
+VALUES 
+('Candidato 1A', '11111', 1, 1),
+('Candidato 2A', '22222', 1, 1);
+-- Adicione mais candidatos conforme necessário
+
+-- Dados de teste para a tabela voto
+INSERT INTO voto (data_voto, partido_id_partido, candidato_id_candidato, eleitor_id_eleitor) 
+VALUES 
+('2023-11-02', 1, 1, 1),
+('2023-11-03', 1, 2, 2);
+-- Adicione mais votos conforme necessário
+
+-- Dados de teste para a tabela confirma_voto
+INSERT INTO confirma_voto (eleitor_id_eleitor, eleicao_id_eleicao, confirma_votar) 
+VALUES 
+(1, 1, 1),
+(2, 1, 1);
+-- Adicione mais confirmações de voto conforme necessário
+
+-- Dados de teste adicionais para a tabela candidato
+INSERT INTO candidato (nome_candidato, numero_urna, partido_id_partido, eleicao_id_eleicao) 
+VALUES 
+('Candidato 3A', '33333', 1, 1),
+('Candidato 4A', '44444', 1, 1),
+('Candidato 5A', '55555', 1, 1),
+('Candidato 6B', '66666', 2, 2),
+('Candidato 7B', '77777', 2, 2),
+('Candidato 8B', '88888', 2, 2),
+('Candidato 9C', '99999', 3, 3),
+('Candidato 10C', '10101', 3, 3),
+('Candidato 11C', '11111', 3, 3),
+('Candidato 12C', '12121', 3, 3);
+-- Adicione mais candidatos conforme necessário
+
+-- Dados de teste adicionais para a tabela partido
+INSERT INTO partido (nome, sigla) 
+VALUES 
+('Partido C', 'PC'),
+('Partido D', 'PD');
+-- Adicione mais partidos conforme necessário
+
+-- Dados de teste adicionais para a tabela eleicao
+INSERT INTO eleicao (titulo, data_inicio, data_termino, local, descricao_eleicao) 
+VALUES 
+('Eleição Federal 2023', '2023-11-20', '2023-12-05', 'Local C', 'Eleição para presidente e congressistas federais'),
+('Eleição Municipal 2024', '2024-01-10', '2024-01-25', 'Local D', 'Eleição para prefeito e vereadores');
+-- Adicione mais eleições conforme necessário
+
+
+
+
+
+
