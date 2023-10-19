@@ -64,18 +64,18 @@ CREATE TABLE IF NOT EXISTS `tcc`.`candidato` (
   `id_candidato` INT NOT NULL AUTO_INCREMENT,
   `nome_candidato` VARCHAR(50) NULL,
   `numero_urna` VARCHAR(5) NULL,
-  `partido_id_partido` INT NOT NULL,
-  `eleicao_id_eleicao` INT NOT NULL,
+  `id_partido` INT NOT NULL,
+  `id_eleicao` INT NOT NULL,
   PRIMARY KEY (`id_candidato`),
-  INDEX `fk_candidato_partido1_idx` (`partido_id_partido` ASC),
-  INDEX `fk_candidato_eleicao1_idx` (`eleicao_id_eleicao` ASC),
+  INDEX `fk_candidato_partido1_idx` (`id_partido` ASC),
+  INDEX `fk_candidato_eleicao1_idx` (`id_eleicao` ASC),
   CONSTRAINT `fk_candidato_partido1`
-    FOREIGN KEY (`partido_id_partido`)
+    FOREIGN KEY (`id_partido`)
     REFERENCES `tcc`.`partido` (`id_partido`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_candidato_eleicao1`
-    FOREIGN KEY (`eleicao_id_eleicao`)
+    FOREIGN KEY (`id_eleicao`)
     REFERENCES `tcc`.`eleicao` (`id_eleicao`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -162,7 +162,7 @@ VALUES
 -- Adicione mais eleições conforme necessário
 
 -- Dados de teste para a tabela candidato
-INSERT INTO candidato (nome_candidato, numero_urna, partido_id_partido, eleicao_id_eleicao) 
+INSERT INTO candidato (nome_candidato, numero_urna, id_partido, id_eleicao) 
 VALUES 
 ('Candidato 1A', '11111', 1, 1),
 ('Candidato 2A', '22222', 1, 1);
@@ -183,7 +183,7 @@ VALUES
 -- Adicione mais confirmações de voto conforme necessário
 
 -- Dados de teste adicionais para a tabela candidato
-INSERT INTO candidato (nome_candidato, numero_urna, partido_id_partido, eleicao_id_eleicao) 
+INSERT INTO candidato (nome_candidato, numero_urna, id_partido, id_eleicao) 
 VALUES 
 ('Candidato 3A', '33333', 1, 1),
 ('Candidato 4A', '44444', 1, 1),
