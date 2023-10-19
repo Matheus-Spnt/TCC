@@ -10,7 +10,7 @@ namespace cls_con_banco_31682
         #region Local
         public static string Local()
         {
-            return "SERVER=localhost;UID=root;PASSWORD=root;DATABASE=TCC";
+            return "SERVER=localhost;UID=root;PASSWORD=root;DATABASE=tcc";
             //return "SERVER=localhost;UID=root;PASSWORD=2812;DATABASE=series";
         }
 
