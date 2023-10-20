@@ -9,12 +9,12 @@ using System.IO;
 
 namespace TCC_V2
 {
-    public partial class login
-    {
-        protected global::System.Web.UI.WebControls.TextBox log_user;
-        protected global::System.Web.UI.WebControls.TextBox log_user_pass1;
-        protected global::System.Web.UI.WebControls.Label lblMsg;
-    }
+    //public partial class login
+    //{
+    //    protected global::System.Web.UI.WebControls.TextBox log_user;
+    //    protected global::System.Web.UI.WebControls.TextBox log_user_pass1;
+    //    protected global::System.Web.UI.WebControls.Label lblMsg;
+    //}
     public partial class login : System.Web.UI.Page
     {
         usuario user1 = new usuario();
@@ -27,7 +27,7 @@ namespace TCC_V2
         }
 
 
-        private void btn_log(object sender, EventArgs e)
+        protected void btn_log(object sender, EventArgs e)
         {
             if (log_user.Text == "") { lblMsg.Text = "Nome do usuário é Obrigatório!"; return; }
             if (log_user_pass1.Text == "") { lblMsg.Text = "Senha é Obrigatório!"; return; }
