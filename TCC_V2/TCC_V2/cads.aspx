@@ -52,7 +52,7 @@
                 <%--<input class="user1" type="text" name="Usuário" placeholder="xx.xxx.xxx-x"> <br>--%>
                 <asp:TextBox class="user1" placeholder="xx.xxx.xxx-x" ID="cad_user_cpf" runat="server"  ></asp:TextBox> <br>
                 <%--<input class="btn2" type="submit" value="Entrar">--%>
-                <asp:Button class="btn2" ID="btn_cad" runat="server" Text="Cadastrar" />
+                <asp:Button class="btn2" ID="btn_cad" OnClick="btn_cad_Click" runat="server" Text="Cadastrar" />
 
             <%--</form>--%>
             <asp:Label ID="lblMsg" class="mens" runat="server" Text=""></asp:Label>
