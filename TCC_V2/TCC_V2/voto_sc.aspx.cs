@@ -9,37 +9,37 @@ using System.IO;
 
 namespace TCC_V2
 {
-    public partial class voto_sc
-    {
-        #region Candidato1
-        protected global::System.Web.UI.WebControls.Label lbl_nm;
-        protected global::System.Web.UI.WebControls.Label lbl_part;
-        protected global::System.Web.UI.WebControls.Label lbl_num;
-        protected global::System.Web.UI.WebControls.RadioButton rbd_1;
-        #endregion
-        #region Candidato2
-        protected global::System.Web.UI.WebControls.Label lbl_nm2;
-        protected global::System.Web.UI.WebControls.Label lbl_part2;
-        protected global::System.Web.UI.WebControls.Label lbl_num2;
-        protected global::System.Web.UI.WebControls.RadioButton rbd_2;
-        #endregion
-        #region Candidato3
-        protected global::System.Web.UI.WebControls.Label lbl_nm3;
-        protected global::System.Web.UI.WebControls.Label lbl_part3;
-        protected global::System.Web.UI.WebControls.Label lbl_num3;
-        protected global::System.Web.UI.WebControls.RadioButton rbd_3;
-        #endregion
-        #region Candidato4
-        protected global::System.Web.UI.WebControls.Label lbl_nm4;
-        protected global::System.Web.UI.WebControls.Label lbl_part4;
-        protected global::System.Web.UI.WebControls.Label lbl_num4;
-        protected global::System.Web.UI.WebControls.RadioButton rbd_4;
-        #endregion
-        protected global::System.Web.UI.WebControls.CheckBox chb_1;
-        protected global::System.Web.UI.WebControls.Label lblMsg;
+    //public partial class voto_sc
+    //{
+    //    #region Candidato1
+    //    protected global::System.Web.UI.WebControls.Label lbl_nm;
+    //    protected global::System.Web.UI.WebControls.Label lbl_part;
+    //    protected global::System.Web.UI.WebControls.Label lbl_num;
+    //    protected global::System.Web.UI.WebControls.RadioButton rbd_1;
+    //    #endregion
+    //    #region Candidato2
+    //    protected global::System.Web.UI.WebControls.Label lbl_nm2;
+    //    protected global::System.Web.UI.WebControls.Label lbl_part2;
+    //    protected global::System.Web.UI.WebControls.Label lbl_num2;
+    //    protected global::System.Web.UI.WebControls.RadioButton rbd_2;
+    //    #endregion
+    //    #region Candidato3
+    //    protected global::System.Web.UI.WebControls.Label lbl_nm3;
+    //    protected global::System.Web.UI.WebControls.Label lbl_part3;
+    //    protected global::System.Web.UI.WebControls.Label lbl_num3;
+    //    protected global::System.Web.UI.WebControls.RadioButton rbd_3;
+    //    #endregion
+    //    #region Candidato4
+    //    protected global::System.Web.UI.WebControls.Label lbl_nm4;
+    //    protected global::System.Web.UI.WebControls.Label lbl_part4;
+    //    protected global::System.Web.UI.WebControls.Label lbl_num4;
+    //    protected global::System.Web.UI.WebControls.RadioButton rbd_4;
+    //    #endregion
+    //    protected global::System.Web.UI.WebControls.CheckBox chb_1;
+    //    protected global::System.Web.UI.WebControls.Label lblMsg;
 
 
-    }
+    //}
 
     public partial class voto_sc : System.Web.UI.Page
     {

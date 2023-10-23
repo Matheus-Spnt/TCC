@@ -36,7 +36,7 @@
                 <asp:TextBox class="pass1" placeholder="******" ID="log_user_pass1" runat="server"  ></asp:TextBox> <br>
                 <a style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:lightskyblue; float: left;" href="cads.aspx">Cadastre-se</a>  
                 <%--<input class="btn1" type="submit" value="Entrar">--%>
-                <asp:Button class="btn1" ID="btn_log" OnClick="btn_logClick" runat="server" Text="Entrar" />
+                <asp:Button class="btn1" ID="btn_log" OnClick="btn_log_Click" runat="server" Text="Entrar" />
             </form>
             <asp:Label ID="lblMsg" class="mens" runat="server" Text=""></asp:Label>
         </div>

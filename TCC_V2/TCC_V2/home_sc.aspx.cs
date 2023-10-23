@@ -9,13 +9,13 @@ using System.IO;
 
 namespace TCC_V2
 {
-    public partial class home_sc
-    {
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-        protected global::System.Web.UI.WebControls.Panel Panel2;
-        protected global::System.Web.UI.WebControls.Panel Panel3;
+    //public partial class home_sc
+    //{
+    //    protected global::System.Web.UI.WebControls.Panel Panel1;
+    //    protected global::System.Web.UI.WebControls.Panel Panel2;
+    //    protected global::System.Web.UI.WebControls.Panel Panel3;
 
-    }
+    //}
 
     public partial class home_sc : System.Web.UI.Page
     {

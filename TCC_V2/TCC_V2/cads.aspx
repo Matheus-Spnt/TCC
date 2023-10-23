@@ -1,3 +1,5 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="cads.aspx.cs" Inherits="TCC_V2.cads" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

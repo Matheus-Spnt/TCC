@@ -88,12 +88,18 @@
       <DependentUpon>cads.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="cads.aspx.designer.cs">
+      <DependentUpon>cads.aspx</DependentUpon>
+    </Compile>
     <Compile Include="cls_con_banco_31682.cs" />
     <Compile Include="cls_dado_banco_31682.cs" />
     <Compile Include="eleicao.cs" />
     <Compile Include="home_sc.aspx.cs">
       <DependentUpon>home_sc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home_sc.aspx.designer.cs">
+      <DependentUpon>home_sc.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -107,14 +113,23 @@
       <DependentUpon>result.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="result.aspx.designer.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+    </Compile>
     <Compile Include="result_2.aspx.cs">
       <DependentUpon>result_2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="result_2.aspx.designer.cs">
+      <DependentUpon>result_2.aspx</DependentUpon>
     </Compile>
     <Compile Include="usuario.cs" />
     <Compile Include="voto_sc.aspx.cs">
       <DependentUpon>voto_sc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="voto_sc.aspx.designer.cs">
+      <DependentUpon>voto_sc.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
