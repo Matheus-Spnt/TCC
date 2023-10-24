@@ -26,8 +26,7 @@ namespace TCC_V2
             banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
         }
 
-
-        protected void btn_log(object sender, EventArgs e)
+        protected void btn_log_Click(object sender, EventArgs e)
         {
             if (log_user.Text == "") { lblMsg.Text = "Nome do usuário é Obrigatório!"; return; }
             if (log_user_pass1.Text == "") { lblMsg.Text = "Senha é Obrigatório!"; return; }

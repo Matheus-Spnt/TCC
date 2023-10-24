@@ -300,7 +300,7 @@ namespace TCC_V2
             #endregion
 
             #region Candidato4
-            if (rbd_4.Checked && chb_1.Checked)
+            if (rdb_4.Checked && chb_1.Checked)
             {
                 string newcode = "1";
                 MySqlDataReader dados = null;

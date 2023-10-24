@@ -36,7 +36,7 @@ namespace TCC_V2
         }
 
 
-        private void btn_cad(object sender, EventArgs e)
+        protected void btn_cad_Click(object sender, EventArgs e)
         {
             #region Teste
             if (cad_user.Text == "") { lblMsg.Text = "Nome do usuário é Obrigatório!"; return; }
