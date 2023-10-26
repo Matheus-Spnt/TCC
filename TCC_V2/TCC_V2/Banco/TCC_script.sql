@@ -154,11 +154,25 @@ VALUES
 ('Partido B', 'PB');
 -- Adicione mais partidos conforme necessário
 
+-- Dados de teste adicionais para a tabela partido
+INSERT INTO partido (nome, sigla) 
+VALUES 
+('Partido C', 'PC'),
+('Partido D', 'PD');
+-- Adicione mais partidos conforme necessário
+
 -- Dados de teste para a tabela eleicao
 INSERT INTO eleicao (titulo, data_inicio, data_termino, local, descricao_eleicao) 
 VALUES 
 ('Eleição Municipal 2023', '2023-11-01', '2023-11-15', 'Local A', 'Eleição para prefeito e vereadores'),
 ('Eleição Estadual 2023', '2023-12-01', '2023-12-15', 'Local B', 'Eleição para governador e deputados estaduais');
+-- Adicione mais eleições conforme necessário
+
+-- Dados de teste adicionais para a tabela eleicao
+INSERT INTO eleicao (titulo, data_inicio, data_termino, local, descricao_eleicao) 
+VALUES 
+('Eleição Federal 2023', '2023-11-20', '2023-12-05', 'Local C', 'Eleição para presidente e congressistas federais'),
+('Eleição Municipal 2024', '2024-01-10', '2024-01-25', 'Local D', 'Eleição para prefeito e vereadores');
 -- Adicione mais eleições conforme necessário
 
 -- Dados de teste para a tabela candidato
@@ -187,29 +201,23 @@ INSERT INTO candidato (nome_candidato, numero_urna, id_partido, id_eleicao)
 VALUES 
 ('Candidato 3A', '33333', 1, 1),
 ('Candidato 4A', '44444', 1, 1),
-('Candidato 5A', '55555', 1, 1),
+('Candidato 5B', '55555', 2, 2),
 ('Candidato 6B', '66666', 2, 2),
 ('Candidato 7B', '77777', 2, 2),
 ('Candidato 8B', '88888', 2, 2),
 ('Candidato 9C', '99999', 3, 3),
 ('Candidato 10C', '10101', 3, 3),
 ('Candidato 11C', '11111', 3, 3),
-('Candidato 12C', '12121', 3, 3);
+('Candidato 12C', '12121', 3, 3),
+('Candidato 13D', '13131', 4, 4),
+('Candidato 14D', '14141', 4, 4),
+('Candidato 15D', '15151', 4, 4),
+('Candidato 16D', '16161', 4, 4);
 -- Adicione mais candidatos conforme necessário
 
--- Dados de teste adicionais para a tabela partido
-INSERT INTO partido (nome, sigla) 
-VALUES 
-('Partido C', 'PC'),
-('Partido D', 'PD');
--- Adicione mais partidos conforme necessário
 
--- Dados de teste adicionais para a tabela eleicao
-INSERT INTO eleicao (titulo, data_inicio, data_termino, local, descricao_eleicao) 
-VALUES 
-('Eleição Federal 2023', '2023-11-20', '2023-12-05', 'Local C', 'Eleição para presidente e congressistas federais'),
-('Eleição Municipal 2024', '2024-01-10', '2024-01-25', 'Local D', 'Eleição para prefeito e vereadores');
--- Adicione mais eleições conforme necessário
+
+
 
 
 

@@ -10,8 +10,13 @@ namespace cls_dado_banco_31682
     public class cls_dado_banco_31682
     {
         #region Strings
-        private string _linhaConexao;
+        private string _linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
         MySqlConnection conexao = null;
+        //MySqlConnection conexao = cls_con_banco_31682.cls_con_banco_31682.Local();
+        //#region Strings
+        //private string _linhaConexao;
+        //private MySqlConnection conexao;
+        //#endregion
 
         public string linhaConexao
         {
@@ -23,6 +28,8 @@ namespace cls_dado_banco_31682
         #region Construtor
         public cls_dado_banco_31682()
         {
+            //_linhaConexao = cls_con_banco_31682.cls_con_banco_31682.GetConnection();
+            //conexao = new MySqlConnection(_linhaConexao);
 
         }
         #endregion
