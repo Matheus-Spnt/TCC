@@ -22,8 +22,8 @@ namespace TCC_V2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            banco = new cls_dado_banco_31682.cls_dado_banco_31682();
-            banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
+            //banco = new cls_dado_banco_31682.cls_dado_banco_31682();
+            //banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
         }
 
         protected void btn_log_Click(object sender, EventArgs e)
@@ -31,24 +31,24 @@ namespace TCC_V2
             if (log_user.Text == "") { lblMsg.Text = "Nome do usuário é Obrigatório!"; return; }
             if (log_user_pass1.Text == "") { lblMsg.Text = "Senha é Obrigatório!"; return; }
 
-            MySqlDataReader dados = null;
+            //MySqlDataReader dados = null;
 
+            Response.Redirect("~/home_sc.aspx");
 
+            //if (!banco.Consult("select nome_eleitor, id_eleitor, senha from eleitor where nome_eleitor = " + log_user.Text + " and senha = " + log_user_pass1.Text + ";", ref dados))
+            //{
+            //    lblMsg.Text = "Usuário não existe. Favor Cadstrar";
+            //    banco.Closing();
+            //    return;
+            //}
 
-            if (!banco.Consult("select nome_eleitor, id_eleitor, senha from eleitor where nome_eleitor = " + log_user.Text + " and senha = " + log_user_pass1.Text + ";", ref dados))
-            {
-                lblMsg.Text = "Usuário não existe. Favor Cadstrar";
-                banco.Closing();
-                return;
-            }
+            //if (dados.HasRows)
+            //{
 
-            if (dados.HasRows)
-            {
-                
-                user1.SetUsuarioId(dados["id_eleitor"].ToString());
-                Response.Redirect("~/home_sc.aspx");
+            //    user1.SetUsuarioId(dados["id_eleitor"].ToString());
+            //    Response.Redirect("~/home_sc.aspx");
 
-            }
+            //}
         }
     }
 }

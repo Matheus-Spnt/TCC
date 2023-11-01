@@ -31,8 +31,8 @@ namespace TCC_V2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            banco = new cls_dado_banco_31682.cls_dado_banco_31682();
-            banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
+            //banco = new cls_dado_banco_31682.cls_dado_banco_31682();
+            //banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
         }
 
 
@@ -56,40 +56,43 @@ namespace TCC_V2
 
             #endregion
 
-            string newcode = "1";
-            MySqlDataReader dados = null;
+            Response.Redirect("~/login.aspx");
 
-            #region Next code
-            if (!banco.Consult("Select max(id_nome)+1 from eleitor", ref dados))
-            {
-                lblMsg.Text = "Problemas na consula ao servidor";
-                banco.Closing();
-                return;
-            }
 
-            if (dados.HasRows)
-            {
-                if (dados.Read())
-                {
-                    newcode = dados[0].ToString();
-                }
-            }
-            if (!dados.IsClosed) { dados.Close(); }
-            #endregion
+            //string newcode = "1";
+            //MySqlDataReader dados = null;
 
-            string comando = "insert into eleitor values (" + newcode + ",'" + cad_user.Text + "'," + cad_user_nasc.Text + "," + cad_user_cpf.Text + ",'" + cad_user_ender.Text + "'," + cad_user_titulo.Text + "," + cad_user_zona.Text + "," + cad_user_sec.Text + "," + cad_user_pass1.Text + ")";
+            //#region Next code
+            //if (!banco.Consult("Select max(id_nome)+1 from eleitor", ref dados))
+            //{
+            //    lblMsg.Text = "Problemas na consula ao servidor";
+            //    banco.Closing();
+            //    return;
+            //}
 
-            if (!banco.Executar(comando))
-            {
-                lblMsg.Text = "Problemas na criação de usuário";
-                banco.Closing();
-                return;
-            }
-            else
-            {
-                Response.Redirect("~/login.aspx");
-            }
-            
+            //if (dados.HasRows)
+            //{
+            //    if (dados.Read())
+            //    {
+            //        newcode = dados[0].ToString();
+            //    }
+            //}
+            //if (!dados.IsClosed) { dados.Close(); }
+            //#endregion
+
+            //string comando = "insert into eleitor values (" + newcode + ",'" + cad_user.Text + "'," + cad_user_nasc.Text + "," + cad_user_cpf.Text + ",'" + cad_user_ender.Text + "'," + cad_user_titulo.Text + "," + cad_user_zona.Text + "," + cad_user_sec.Text + "," + cad_user_pass1.Text + ")";
+
+            //if (!banco.Executar(comando))
+            //{
+            //    lblMsg.Text = "Problemas na criação de usuário";
+            //    banco.Closing();
+            //    return;
+            //}
+            //else
+            //{
+            //    Response.Redirect("~/login.aspx");
+            //}
+
 
         }
 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC_V2", "TCC_V2\TCC_V2.csproj", "{C31831FF-EA33-4F0E-AEFD-C397DCDFCF35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC_V1.5", "TCC_V2\TCC_V1.5.csproj", "{C31831FF-EA33-4F0E-AEFD-C397DCDFCF35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

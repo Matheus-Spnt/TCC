@@ -23,8 +23,8 @@
         <a class="link_leave" href="home_sc.html">Voltar -></a>
     </header>
     <div class="bar_4"></div>
-    <%--<h1 class="titilo_vota" >Governador</h1>--%>
-    <asp:Label ID="lbl_text1" class="titilo_vota" runat="server" Text="Governador"></asp:Label>
+    <h1 class="titilo_vota" >Governador</h1>
+    <%--<asp:Label ID="lbl_text1" class="titilo_vota" runat="server" Text="Governador"></asp:Label>--%>
     <div class="vota" >
         <img class="vota_logo" src="../IMG/sparkles.svg" alt="Icone de votação">
         <div class="bar_5" ></div>
@@ -45,29 +45,29 @@
     <div class="box_resul" >
         <div class="campo_voto_fc_2">
             <img class="user_pic_3">
-            <%--<p class="user_name_3">Alexsandro Sousa Lima</p>--%>
-            <asp:Panel ID="Panel1" runat="server">
+            <p class="user_name_3">Alexsandro Sousa Lima</p>
+            <%--<asp:Panel ID="Panel1" runat="server">
                 <asp:Label ID="lbl_can1" class="user_name_3" runat="server" Text=""></asp:Label>
-            </asp:Panel>
+            </asp:Panel>--%>
             
         </div>
         
         <div class="campo_voto_fc_2">
             <img class="user_pic_4">
-            <%--<p class="user_name_3">Paula Barros Campos</p>--%>
-            <asp:Label ID="lbl_can2" class="user_name_3" runat="server" Text="Paula Barros Campos"></asp:Label>
+            <p class="user_name_3">Paula Barros Campos</p>
+            <%--<asp:Label ID="lbl_can2" class="user_name_3" runat="server" Text="Paula Barros Campos"></asp:Label>--%>
         </div>
         
         <div class="campo_voto_fc_2">
             <img class="user_pic_5">
-            <%--<p class="user_name_3">Felipe Cunha Jardim</p>--%>
-            <asp:Label ID="lbl_can3" class="user_name_3" runat="server" Text="Felipe Cunha Jardim"></asp:Label>
+            <p class="user_name_3">Felipe Cunha Jardim</p>
+            <%--<asp:Label ID="lbl_can3" class="user_name_3" runat="server" Text="Felipe Cunha Jardim"></asp:Label>--%>
         </div>
         
         <div class="campo_voto_fc_2">
             <img class="user_pic_6">
-            <%--<p class="user_name_3">Ana Rezende de Oliveira</p>--%>
-            <asp:Label ID="lbl_can4" class="user_name_3" runat="server" Text="Ana Rezende de Oliveira"></asp:Label>
+            <p class="user_name_3">Ana Rezende de Oliveira</p>
+            <%--<asp:Label ID="lbl_can4" class="user_name_3" runat="server" Text="Ana Rezende de Oliveira"></asp:Label>--%>
         </div>
     </div>
 </body>

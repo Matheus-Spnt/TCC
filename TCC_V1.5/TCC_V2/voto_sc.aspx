@@ -19,7 +19,7 @@
 <body>
     <header class="hedr2">
         <img class="user_pic"  src="../IMG/Mask_group.svg"  alt="Foto do usuário" >
-        <%--<p class="user_name">João da Silva</p>--%>
+        <p class="user_name">João da Silva</p>
         <asp:Label ID="lbl_user1" class="user_name" runat="server" Text="Joao da Silva"></asp:Label>
         <h1 class="h1_user">SANTA ELEGE</h1>
         <a class="link_leave" href="home_sc.aspx">Voltar -></a>

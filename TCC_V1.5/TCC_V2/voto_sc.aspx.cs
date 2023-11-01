@@ -51,304 +51,306 @@ namespace TCC_V2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            banco = new cls_dado_banco_31682.cls_dado_banco_31682();
-            banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
+            //banco = new cls_dado_banco_31682.cls_dado_banco_31682();
+            //banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
 
             
-            int i = 0;
+            //int i = 0;
 
-            MySqlDataReader dados = null;
+            //MySqlDataReader dados = null;
 
-            if (!banco.Consult("select c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_eleicao =" + elect1.GetEleicaoId() +";", ref dados))
-            {
-                lblMsg.Text = "Problemas na consulta ao servidor";
-                banco.Closing();
-                return;
-            }
-            if (dados.HasRows)
-            {
-                while (dados.Read() || i < 4)
-                {
-                    guarda[i] = dados["c.id_candidato"].ToString();
-                    i++;
-                }
-            }
+            //if (!banco.Consult("select c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_eleicao =" + elect1.GetEleicaoId() +";", ref dados))
+            //{
+            //    lblMsg.Text = "Problemas na consulta ao servidor";
+            //    banco.Closing();
+            //    return;
+            //}
+            //if (dados.HasRows)
+            //{
+            //    while (dados.Read() || i < 4)
+            //    {
+            //        guarda[i] = dados["c.id_candidato"].ToString();
+            //        i++;
+            //    }
+            //}
 
 
-            #region Candidato1
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[0] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
-            {
-                lblMsg.Text = "Problemas na consulta ao servidor";
-                banco.Closing();
-                return;
-            }
+            //#region Candidato1
+            //if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[0] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
+            //{
+            //    lblMsg.Text = "Problemas na consulta ao servidor";
+            //    banco.Closing();
+            //    return;
+            //}
 
-            if (dados.HasRows)
-            {
-                lbl_nm.Text = dados["c.nm_candidato"].ToString();
-                lbl_part.Text = dados["p.nome_partido"].ToString();
-                lbl_num.Text = dados["c.numero_urna"].ToString();
-                guarda2[0] = dados["p.id_partido"].ToString();
-            }
-            #endregion
+            //if (dados.HasRows)
+            //{
+            //    lbl_nm.Text = dados["c.nm_candidato"].ToString();
+            //    lbl_part.Text = dados["p.nome_partido"].ToString();
+            //    lbl_num.Text = dados["c.numero_urna"].ToString();
+            //    guarda2[0] = dados["p.id_partido"].ToString();
+            //}
+            //#endregion
 
-            #region Candidato2
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[1] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
-            {
-                lblMsg.Text = "Problemas na consulta ao servidor";
-                banco.Closing();
-                return;
-            }
+            //#region Candidato2
+            //if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[1] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
+            //{
+            //    lblMsg.Text = "Problemas na consulta ao servidor";
+            //    banco.Closing();
+            //    return;
+            //}
 
-            if (dados.HasRows)
-            {
-                lbl_nm2.Text = dados["c.nm_candidato"].ToString();
-                lbl_part2.Text = dados["p.nome_partido"].ToString();
-                lbl_num2.Text = dados["c.numero_urna"].ToString();
-                guarda2[1] = dados["p.id_partido"].ToString();
-            }
-            #endregion
+            //if (dados.HasRows)
+            //{
+            //    lbl_nm2.Text = dados["c.nm_candidato"].ToString();
+            //    lbl_part2.Text = dados["p.nome_partido"].ToString();
+            //    lbl_num2.Text = dados["c.numero_urna"].ToString();
+            //    guarda2[1] = dados["p.id_partido"].ToString();
+            //}
+            //#endregion
 
-            #region Candidato3
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[2] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
-            {
-                lblMsg.Text = "Problemas na consulta ao servidor";
-                banco.Closing();
-                return;
-            }
+            //#region Candidato3
+            //if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[2] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
+            //{
+            //    lblMsg.Text = "Problemas na consulta ao servidor";
+            //    banco.Closing();
+            //    return;
+            //}
 
-            if (dados.HasRows)
-            {
-                lbl_nm3.Text = dados["c.nm_candidato"].ToString();
-                lbl_part3.Text = dados["p.nome_partido"].ToString();
-                lbl_num3.Text = dados["c.numero_urna"].ToString();
-                guarda2[2] = dados["p.id_partido"].ToString();
-            }
-            #endregion
+            //if (dados.HasRows)
+            //{
+            //    lbl_nm3.Text = dados["c.nm_candidato"].ToString();
+            //    lbl_part3.Text = dados["p.nome_partido"].ToString();
+            //    lbl_num3.Text = dados["c.numero_urna"].ToString();
+            //    guarda2[2] = dados["p.id_partido"].ToString();
+            //}
+            //#endregion
 
-            #region Candidato4
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[3] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
-            {
-                lblMsg.Text = "Problemas na consulta ao servidor";
-                banco.Closing();
-                return;
-            }
+            //#region Candidato4
+            //if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[3] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
+            //{
+            //    lblMsg.Text = "Problemas na consulta ao servidor";
+            //    banco.Closing();
+            //    return;
+            //}
 
-            if (dados.HasRows)
-            {
-                lbl_nm.Text = dados["c.nm_candidato"].ToString();
-                lbl_part.Text = dados["p.nome_partido"].ToString();
-                lbl_num.Text = dados["c.numero_urna"].ToString();
-                guarda2[3] = dados["p.id_partido"].ToString();
-            }
-            #endregion
+            //if (dados.HasRows)
+            //{
+            //    lbl_nm.Text = dados["c.nm_candidato"].ToString();
+            //    lbl_part.Text = dados["p.nome_partido"].ToString();
+            //    lbl_num.Text = dados["c.numero_urna"].ToString();
+            //    guarda2[3] = dados["p.id_partido"].ToString();
+            //}
+            //#endregion
         }
 
         private void btn_votar(object sender, EventArgs e)
         {
-            #region Candidato1
-            if (rbd_1.Checked && chb_1.Checked)
-            {
-                string newcode = "1";
-                MySqlDataReader dados = null;
-                if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
-                {
-                    lblMsg.Text = "Problemas na consula ao servidor";
-                    banco.Closing();
-                    return;
-                }
+            Response.Redirect("~/home_sc.aspx");
 
-                if (dados.HasRows)
-                {
-                    if (dados.Read())
-                    {
-                        newcode = dados[0].ToString();
-                    }
-                }
-                if (!dados.IsClosed) { dados.Close(); }
+            //#region Candidato1
+            //if (rbd_1.Checked && chb_1.Checked)
+            //{
+            //    string newcode = "1";
+            //    MySqlDataReader dados = null;
+            //    if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
+            //    {
+            //        lblMsg.Text = "Problemas na consula ao servidor";
+            //        banco.Closing();
+            //        return;
+            //    }
 
-
-                string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[0] + ", " + guarda[0] + " )";
-
-                if (!banco.Executar(comando))
-                {
-                    lblMsg.Text = "Problemas na votação";
-                    banco.Closing();
-                    return;
-                }
-                else
-                {
-                    comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
-
-                    if (!banco.Executar(comando))
-                    {
-                        lblMsg.Text = "Problemas na votação";
-                        banco.Closing();
-                        return;
-                    }
-                    else
-                    {
-                        Response.Redirect("~/home_sc.aspx");
-                    }
-                }
+            //    if (dados.HasRows)
+            //    {
+            //        if (dados.Read())
+            //        {
+            //            newcode = dados[0].ToString();
+            //        }
+            //    }
+            //    if (!dados.IsClosed) { dados.Close(); }
 
 
+            //    string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[0] + ", " + guarda[0] + " )";
 
-            }
-            #endregion
+            //    if (!banco.Executar(comando))
+            //    {
+            //        lblMsg.Text = "Problemas na votação";
+            //        banco.Closing();
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
 
-            #region Candidato2
-            if (rbd_2.Checked && chb_1.Checked)
-            {
-                string newcode = "1";
-                MySqlDataReader dados = null;
-                if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
-                {
-                    lblMsg.Text = "Problemas na consula ao servidor";
-                    banco.Closing();
-                    return;
-                }
-
-                if (dados.HasRows)
-                {
-                    if (dados.Read())
-                    {
-                        newcode = dados[0].ToString();
-                    }
-                }
-                if (!dados.IsClosed) { dados.Close(); }
-
-
-                string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[1] + ", " + guarda[1] + " )";
-
-                if (!banco.Executar(comando))
-                {
-                    lblMsg.Text = "Problemas na votação";
-                    banco.Closing();
-                    return;
-                }
-                else
-                {
-                    comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
-
-                    if (!banco.Executar(comando))
-                    {
-                        lblMsg.Text = "Problemas na votação";
-                        banco.Closing();
-                        return;
-                    }
-                    else
-                    {
-                        Response.Redirect("~/home_sc.aspx");
-                    }
-                }
+            //        if (!banco.Executar(comando))
+            //        {
+            //            lblMsg.Text = "Problemas na votação";
+            //            banco.Closing();
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            Response.Redirect("~/home_sc.aspx");
+            //        }
+            //    }
 
 
 
-            }
-            #endregion
+            //}
+            //#endregion
 
-            #region Candidato3
-            if (rbd_3.Checked && chb_1.Checked)
-            {
-                string newcode = "1";
-                MySqlDataReader dados = null;
-                if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
-                {
-                    lblMsg.Text = "Problemas na consula ao servidor";
-                    banco.Closing();
-                    return;
-                }
+            //#region Candidato2
+            //if (rbd_2.Checked && chb_1.Checked)
+            //{
+            //    string newcode = "1";
+            //    MySqlDataReader dados = null;
+            //    if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
+            //    {
+            //        lblMsg.Text = "Problemas na consula ao servidor";
+            //        banco.Closing();
+            //        return;
+            //    }
 
-                if (dados.HasRows)
-                {
-                    if (dados.Read())
-                    {
-                        newcode = dados[0].ToString();
-                    }
-                }
-                if (!dados.IsClosed) { dados.Close(); }
-
-
-                string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[2] + ", " + guarda[2] + " )";
-
-                if (!banco.Executar(comando))
-                {
-                    lblMsg.Text = "Problemas na votação";
-                    banco.Closing();
-                    return;
-                }
-                else
-                {
-                    comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
-
-                    if (!banco.Executar(comando))
-                    {
-                        lblMsg.Text = "Problemas na votação";
-                        banco.Closing();
-                        return;
-                    }
-                    else
-                    {
-                        Response.Redirect("~/home_sc.aspx");
-                    }
-                }
+            //    if (dados.HasRows)
+            //    {
+            //        if (dados.Read())
+            //        {
+            //            newcode = dados[0].ToString();
+            //        }
+            //    }
+            //    if (!dados.IsClosed) { dados.Close(); }
 
 
+            //    string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[1] + ", " + guarda[1] + " )";
 
-            }
-            #endregion
+            //    if (!banco.Executar(comando))
+            //    {
+            //        lblMsg.Text = "Problemas na votação";
+            //        banco.Closing();
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
 
-            #region Candidato4
-            if (rdb_4.Checked && chb_1.Checked)
-            {
-                string newcode = "1";
-                MySqlDataReader dados = null;
-                if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
-                {
-                    lblMsg.Text = "Problemas na consula ao servidor";
-                    banco.Closing();
-                    return;
-                }
-
-                if (dados.HasRows)
-                {
-                    if (dados.Read())
-                    {
-                        newcode = dados[0].ToString();
-                    }
-                }
-                if (!dados.IsClosed) { dados.Close(); }
-
-
-                string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[3] + ", " + guarda[3] + " )";
-
-                if (!banco.Executar(comando))
-                {
-                    lblMsg.Text = "Problemas na votação";
-                    banco.Closing();
-                    return;
-                }
-                else
-                {
-                    comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
-
-                    if (!banco.Executar(comando))
-                    {
-                        lblMsg.Text = "Problemas na votação";
-                        banco.Closing();
-                        return;
-                    }
-                    else
-                    {
-                        Response.Redirect("~/home_sc.aspx");
-                    }
-                }
+            //        if (!banco.Executar(comando))
+            //        {
+            //            lblMsg.Text = "Problemas na votação";
+            //            banco.Closing();
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            Response.Redirect("~/home_sc.aspx");
+            //        }
+            //    }
 
 
 
-            }
-            #endregion
+            //}
+            //#endregion
+
+            //#region Candidato3
+            //if (rbd_3.Checked && chb_1.Checked)
+            //{
+            //    string newcode = "1";
+            //    MySqlDataReader dados = null;
+            //    if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
+            //    {
+            //        lblMsg.Text = "Problemas na consula ao servidor";
+            //        banco.Closing();
+            //        return;
+            //    }
+
+            //    if (dados.HasRows)
+            //    {
+            //        if (dados.Read())
+            //        {
+            //            newcode = dados[0].ToString();
+            //        }
+            //    }
+            //    if (!dados.IsClosed) { dados.Close(); }
+
+
+            //    string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[2] + ", " + guarda[2] + " )";
+
+            //    if (!banco.Executar(comando))
+            //    {
+            //        lblMsg.Text = "Problemas na votação";
+            //        banco.Closing();
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
+
+            //        if (!banco.Executar(comando))
+            //        {
+            //            lblMsg.Text = "Problemas na votação";
+            //            banco.Closing();
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            Response.Redirect("~/home_sc.aspx");
+            //        }
+            //    }
+
+
+
+            //}
+            //#endregion
+
+            //#region Candidato4
+            //if (rdb_4.Checked && chb_1.Checked)
+            //{
+            //    string newcode = "1";
+            //    MySqlDataReader dados = null;
+            //    if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
+            //    {
+            //        lblMsg.Text = "Problemas na consula ao servidor";
+            //        banco.Closing();
+            //        return;
+            //    }
+
+            //    if (dados.HasRows)
+            //    {
+            //        if (dados.Read())
+            //        {
+            //            newcode = dados[0].ToString();
+            //        }
+            //    }
+            //    if (!dados.IsClosed) { dados.Close(); }
+
+
+            //    string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[3] + ", " + guarda[3] + " )";
+
+            //    if (!banco.Executar(comando))
+            //    {
+            //        lblMsg.Text = "Problemas na votação";
+            //        banco.Closing();
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
+
+            //        if (!banco.Executar(comando))
+            //        {
+            //            lblMsg.Text = "Problemas na votação";
+            //            banco.Closing();
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            Response.Redirect("~/home_sc.aspx");
+            //        }
+            //    }
+
+
+
+            //}
+            //#endregion
         }
 
 

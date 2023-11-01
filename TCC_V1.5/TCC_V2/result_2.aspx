@@ -23,7 +23,7 @@
         <a class="link_leave" href="home_sc.html">Voltar -></a>
     </header>
     <div class="bar_4"></div>
-    <%--<h1 class="titilo_vota" >Senador</h1>--%>
+    <h1 class="titilo_vota" >Senador</h1>
     <asp:Label ID="lbl_text2" class="titilo_vota" runat="server" Text="Senador"></asp:Label>
     <div class="vota" >
         <img class="vota_logo" src="../IMG/sparkles.svg" alt="Icone de votação">
@@ -45,30 +45,30 @@
     <div class="box_resul" >
         <div class="campo_voto_fc_2">
             <img class="user_pic_3">
-            <%--<p class="user_name_3">Rafael Caridade</p>--%>
-            <asp:Panel ID="Panel1" runat="server">
+            <p class="user_name_3">Rafael Caridade</p>
+            <%--<asp:Panel ID="Panel1" runat="server">
                 <asp:Label ID="lbl_can1" class="user_name_3" runat="server" Text=""></asp:Label>
-            </asp:Panel>
+            </asp:Panel>--%>
             
 
         </div>
         
         <div class="campo_voto_fc_2">
             <img class="user_pic_4">
-            <%--<p class="user_name_3">Monica Araujo</p>--%>
-            <asp:Label ID="lbl_can2" class="user_name_3" runat="server" Text="Monica Araujo"></asp:Label>
+            <p class="user_name_3">Monica Araujo</p>
+            <%--<asp:Label ID="lbl_can2" class="user_name_3" runat="server" Text="Monica Araujo"></asp:Label>--%>
         </div>
         
         <div class="campo_voto_fc_2">
             <img class="user_pic_5">
-            <%--<p class="user_name_3">Gabriel Lopes</p>--%>
-            <asp:Label ID="lbl_can3" class="user_name_3" runat="server" Text="Gabriel Lopes"></asp:Label>
+            <p class="user_name_3">Gabriel Lopes</p>
+            <%--<asp:Label ID="lbl_can3" class="user_name_3" runat="server" Text="Gabriel Lopes"></asp:Label>--%>
         </div>
         
         <div class="campo_voto_fc_2">
             <img class="user_pic_6">
-            <%--<p class="user_name_3">Juliana Santos</p>--%>
-            <asp:Label ID="lbl_can4" class="user_name_3" runat="server" Text="Juliana Santos"></asp:Label>
+            <p class="user_name_3">Juliana Santos</p>
+            <%--<asp:Label ID="lbl_can4" class="user_name_3" runat="server" Text="Juliana Santos"></asp:Label>--%>
         </div>
     </div>
 </body>
