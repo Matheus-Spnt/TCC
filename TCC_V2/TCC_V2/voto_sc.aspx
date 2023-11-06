@@ -1,3 +1,6 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="voto_sc.aspx.cs" Inherits="TCC_V2.voto_sc" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +58,7 @@
         <p class="per_3">Número: </p>
         <%--<p class="res_3">38</p>--%>
         <asp:Label ID="lbl_num2" class="res_3" runat="server" Text="38"></asp:Label>
-        <asp:RadioButton ID="rbd_3" runat="server" Text="Votar nesse candidato" />
+        <asp:RadioButton ID="rbd_2" runat="server" Text="Votar nesse candidato" />
         <!-- <img class="candidato_img" > -->
         
     </div>
@@ -101,7 +104,7 @@
             <asp:CheckBox ID="chb_1" class="v_btn_" runat="server" />
             <label style="color: white; margin-left: -80px; margin-top: 10px;" for="conf">Confirmo votar nesse candidato</label><br>
             <%--<input class="v_btn_1" type="submit" value="Votar">--%>
-            <asp:Button class="v_btn_1" ID="btn_votar" runat="server" Text="Votar" />
+            <asp:Button class="v_btn_1" ID="btn_votar" OnClick="btn_votar_Click" runat="server" Text="Votar" />
         </form>
         <asp:Label ID="lblMsg" class="mens" runat="server" Text=""></asp:Label>
     </div>

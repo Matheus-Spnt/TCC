@@ -10,14 +10,14 @@ using System.IO;
 
 namespace TCC_V2
 {
-    public partial class result_2
-    {
-        protected global::System.Web.UI.WebControls.Label lbl_text2;
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-        protected global::System.Web.UI.WebControls.Label lbl_can2;
-        protected global::System.Web.UI.WebControls.Label lbl_can3;
-        protected global::System.Web.UI.WebControls.Label lbl_can4;
-    }
+    //public partial class result_2
+    //{
+    //    protected global::System.Web.UI.WebControls.Label lbl_text2;
+    //    protected global::System.Web.UI.WebControls.Panel Panel1;
+    //    protected global::System.Web.UI.WebControls.Label lbl_can2;
+    //    protected global::System.Web.UI.WebControls.Label lbl_can3;
+    //    protected global::System.Web.UI.WebControls.Label lbl_can4;
+    //}
 
     public partial class result_2 : System.Web.UI.Page
     {

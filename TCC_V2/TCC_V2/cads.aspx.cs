@@ -9,20 +9,20 @@ using System.IO;
 
 namespace TCC_V2
 {
-    public partial class cads
-    {
-        protected global::System.Web.UI.WebControls.TextBox cad_user;
-        protected global::System.Web.UI.WebControls.TextBox cad_user_nasc;
-        protected global::System.Web.UI.WebControls.TextBox cad_user_ender;
-        protected global::System.Web.UI.WebControls.TextBox cad_user_titulo;
-        protected global::System.Web.UI.WebControls.TextBox cad_user_zona;
-        protected global::System.Web.UI.WebControls.TextBox cad_user_sec;
-        protected global::System.Web.UI.WebControls.TextBox cad_user_pass1;
-        protected global::System.Web.UI.WebControls.TextBox cad_user_pass2;
-        protected global::System.Web.UI.WebControls.TextBox cad_user_cpf;
-        //protected global::System.Web.UI.WebControls.Button btn_cad;
-        protected global::System.Web.UI.WebControls.Label lblMsg;
-    }
+    //public partial class cads
+    //{
+    //    protected global::System.Web.UI.WebControls.TextBox cad_user;
+    //    protected global::System.Web.UI.WebControls.TextBox cad_user_nasc;
+    //    protected global::System.Web.UI.WebControls.TextBox cad_user_ender;
+    //    protected global::System.Web.UI.WebControls.TextBox cad_user_titulo;
+    //    protected global::System.Web.UI.WebControls.TextBox cad_user_zona;
+    //    protected global::System.Web.UI.WebControls.TextBox cad_user_sec;
+    //    protected global::System.Web.UI.WebControls.TextBox cad_user_pass1;
+    //    protected global::System.Web.UI.WebControls.TextBox cad_user_pass2;
+    //    protected global::System.Web.UI.WebControls.TextBox cad_user_cpf;
+    //    //protected global::System.Web.UI.WebControls.Button btn_cad;
+    //    protected global::System.Web.UI.WebControls.Label lblMsg;
+    //}
 
     public partial class cads : System.Web.UI.Page
     {
@@ -36,7 +36,7 @@ namespace TCC_V2
         }
 
 
-        private void btn_cad(object sender, EventArgs e)
+        protected void btn_cad_Click(object sender, EventArgs e)
         {
             #region Teste
             if (cad_user.Text == "") { lblMsg.Text = "Nome do usuário é Obrigatório!"; return; }

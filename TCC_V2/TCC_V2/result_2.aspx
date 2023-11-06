@@ -1,3 +1,5 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="result_2.aspx.cs" Inherits="TCC_V2.result_2" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
