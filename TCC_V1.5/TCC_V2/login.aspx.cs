@@ -33,6 +33,8 @@ namespace TCC_V2
 
             //MySqlDataReader dados = null;
 
+            user1.SetUsuarioV(0);
+
             Response.Redirect("~/home_sc.aspx");
 
             //if (!banco.Consult("select nome_eleitor, id_eleitor, senha from eleitor where nome_eleitor = " + log_user.Text + " and senha = " + log_user_pass1.Text + ";", ref dados))

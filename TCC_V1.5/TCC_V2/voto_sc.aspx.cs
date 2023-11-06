@@ -47,14 +47,22 @@ namespace TCC_V2
         String[] guarda2 = new String[4];
         usuario user1;
         eleicao elect1;
+        int i;
         cls_dado_banco_31682.cls_dado_banco_31682 banco = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["i"] != null)
+            {
+                i = Convert.ToInt32(Session["i"]);
+                
+            }
+
             //banco = new cls_dado_banco_31682.cls_dado_banco_31682();
             //banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
 
-            
+
             //int i = 0;
 
             //MySqlDataReader dados = null;
@@ -144,8 +152,10 @@ namespace TCC_V2
             //#endregion
         }
 
-        private void btn_votar(object sender, EventArgs e)
+        protected void btn_votar_Click(object sender, EventArgs e)
         {
+            i++;
+            Session["i"] = i;
             Response.Redirect("~/home_sc.aspx");
 
             //#region Candidato1

@@ -20,7 +20,7 @@
         <img class="user_pic"  src="../IMG/Mask_group.svg" >
         <p class="user_name">João da Silva</p>
         <h1 class="h1_user">SANTA ELEGE</h1>
-        <a class="link_leave" href="home_sc.html">Voltar -></a>
+        <a class="link_leave" href="home_sc.aspx">Voltar -></a>
     </header>
     <div class="bar_4"></div>
     <h1 class="titilo_vota" >Governador</h1>

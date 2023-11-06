@@ -17,14 +17,17 @@
     <title>Votar</title>
 </head>
 <body>
+    
     <header class="hedr2">
         <img class="user_pic"  src="../IMG/Mask_group.svg"  alt="Foto do usuário" >
         <p class="user_name">João da Silva</p>
-        <asp:Label ID="lbl_user1" class="user_name" runat="server" Text="Joao da Silva"></asp:Label>
+        <%--<asp:Label ID="lbl_user1" class="user_name" runat="server" Text="Joao da Silva"></asp:Label>--%>
         <h1 class="h1_user">SANTA ELEGE</h1>
         <a class="link_leave" href="home_sc.aspx">Voltar -></a>
     </header>
     <div class="bar_4"></div>
+
+    <form action="home_sc.aspx" runat="server" target="_self">
     
     <div class="campo_voto_fc">
         <img class="user_pic_2" src="../IMG/Mask_group.svg" >
@@ -99,14 +102,15 @@
         
     </div>
     <div class="v_btn">
-        <form action="home_sc.html" target="_self">
+        <%--<form action="home_sc.html" target="_self">--%>
             <%--<input class="v_btn_" type="checkbox" name="conf">--%>
             <asp:CheckBox ID="chb_1" class="v_btn_" runat="server" />
             <label style="color: white; margin-left: -80px; margin-top: 10px;" for="conf">Confirmo votar nesse candidato</label><br>
             <%--<input class="v_btn_1" type="submit" value="Votar">--%>
             <asp:Button class="v_btn_1" ID="btn_votar" OnClick="btn_votar_Click" runat="server" Text="Votar" />
-        </form>
+        <%--</form>--%>
         <asp:Label ID="lblMsg" class="mens" runat="server" Text=""></asp:Label>
     </div>
+    </form>
 </body>
 </html>
