@@ -21,7 +21,7 @@ namespace cls_dado_banco_31682
         public string linhaConexao
         {
             set { _linhaConexao = value; }
-            //get { return _linhaConexao; }
+            get { return _linhaConexao; }
             //set { _linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local(); }
             //get { return _linhaConexao; }
         }
