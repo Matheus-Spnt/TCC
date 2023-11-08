@@ -117,18 +117,18 @@ ENGINE = InnoDB;
 -- Table `tcc`.`confirma_voto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tcc`.`confirma_voto` (
-  `eleitor_id_eleitor` INT NOT NULL,
-  `eleicao_id_eleicao` INT NOT NULL,
+  `id_eleitor` INT NOT NULL,
+  `id_eleicao` INT NOT NULL,
   `confirma_votar` TINYINT NULL DEFAULT 0,
-  INDEX `fk_confirma_voto_eleitor1_idx` (`eleitor_id_eleitor` ASC),
-  INDEX `fk_confirma_voto_eleicao1_idx` (`eleicao_id_eleicao` ASC),
+  INDEX `fk_confirma_voto_eleitor1_idx` (`id_eleitor` ASC),
+  INDEX `fk_confirma_voto_eleicao1_idx` (`id_eleicao` ASC),
   CONSTRAINT `fk_confirma_voto_eleitor1`
-    FOREIGN KEY (`eleitor_id_eleitor`)
+    FOREIGN KEY (`id_eleitor`)
     REFERENCES `tcc`.`eleitor` (`id_eleitor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_confirma_voto_eleicao1`
-    FOREIGN KEY (`eleicao_id_eleicao`)
+    FOREIGN KEY (`id_eleicao`)
     REFERENCES `tcc`.`eleicao` (`id_eleicao`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -173,6 +173,13 @@ INSERT INTO eleicao (titulo, data_inicio, data_termino, local, descricao_eleicao
 VALUES 
 ('Eleição Federal 2023', '2023-11-20', '2023-12-05', 'Local C', 'Eleição para presidente e congressistas federais'),
 ('Eleição Municipal 2024', '2024-01-10', '2024-01-25', 'Local D', 'Eleição para prefeito e vereadores');
+
+INSERT INTO eleicao (titulo, data_inicio, local, descricao_eleicao) 
+VALUES 
+('Eleição Federal - Senado 2023', '2023-11-20', 'Local C', 'Eleição para presidente e congressistas federais'),
+('Eleição Federal - Governador 2023', '2023-01-10', 'Local D', 'Eleição para prefeito e vereadores');
+
+
 -- Adicione mais eleições conforme necessário
 
 -- Dados de teste para a tabela candidato
@@ -190,10 +197,16 @@ VALUES
 -- Adicione mais votos conforme necessário
 
 -- Dados de teste para a tabela confirma_voto
-INSERT INTO confirma_voto (eleitor_id_eleitor, eleicao_id_eleicao, confirma_votar) 
+INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) 
 VALUES 
 (1, 1, 1),
-(2, 1, 1);
+(2, 1, 1),
+(1, 3, 1),
+(2, 3, 1),
+(1, 4, 1),
+(2, 4, 1),
+(1, 2, 0),
+(2, 2, 0);
 -- Adicione mais confirmações de voto conforme necessário
 
 -- Dados de teste adicionais para a tabela candidato
@@ -215,7 +228,11 @@ VALUES
 ('Candidato 16D', '16161', 4, 4);
 -- Adicione mais candidatos conforme necessário
 
+/*select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = 1 and cv.confirma_votar = 0 ;*/
 
+select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = 1 and cv.confirma_votar = 1 and e.data_termino is null ;
+
+select e.descricao_eleicao, e.id_eleicao, e.titulo from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = 1 and cv.confirma_votar = 1 and e.data_termino is null ;
 
 
 

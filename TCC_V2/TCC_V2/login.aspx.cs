@@ -43,8 +43,8 @@ namespace TCC_V2
 
             if (dados.Read())
             {
-
-                user1.SetUsuarioId(dados["id_eleitor"].ToString());
+                Session["user"] = dados["id_eleitor"].ToString();
+                //user1.SetUsuarioId(dados["id_eleitor"].ToString());
                 //if (Session["i"] != null)
                 //{
                 //    i = Convert.ToInt32(Session["i"]);
@@ -54,7 +54,7 @@ namespace TCC_V2
                 //    i = 0;
                 //}
 
-                Session["user"] = dados["id_eleitor"];
+                
 
             }
             Response.Redirect("~/home_sc.aspx");
