@@ -19,7 +19,7 @@ namespace TCC_V2
     {
         usuario user1 = new usuario();
         cls_dado_banco_31682.cls_dado_banco_31682 banco = null;
-
+        int i;
         protected void Page_Load(object sender, EventArgs e)
         {
             banco = new cls_dado_banco_31682.cls_dado_banco_31682();
@@ -34,20 +34,30 @@ namespace TCC_V2
             MySqlDataReader dados = null;
 
             
-            if (!banco.Consult("select nome_eleitor, id_eleitor, senha from eleitor where nome_eleitor = " + log_user.Text + " and senha = " + log_user_pass1.Text + ";", ref dados))
+            if (!banco.Consult("select nome_eleitor, id_eleitor, senha from eleitor where nome_eleitor = '" + log_user.Text + "' and senha = '" + log_user_pass1.Text + "';", ref dados))
             {
                 lblMsg.Text = "Usuário não existe. Favor Cadstrar";
                 banco.Closing();
                 return;
             }
 
-            if (dados.HasRows)
+            if (dados.Read())
             {
 
                 user1.SetUsuarioId(dados["id_eleitor"].ToString());
-                Response.Redirect("~/home_sc.aspx");
+                //if (Session["i"] != null)
+                //{
+                //    i = Convert.ToInt32(Session["i"]);
+                //}
+                //else
+                //{
+                //    i = 0;
+                //}
+
+                Session["user"] = dados["id_eleitor"];
 
             }
+            Response.Redirect("~/home_sc.aspx");
         }
     }
 }

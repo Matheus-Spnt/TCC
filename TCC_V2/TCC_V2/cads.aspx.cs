@@ -60,7 +60,7 @@ namespace TCC_V2
             MySqlDataReader dados = null;
 
             #region Next code
-            if (!banco.Consult("Select max(id_eleitor)+1 from eleitor", ref dados))
+            if (!banco.Consult("Select count(id_eleitor)+1 from eleitor", ref dados))
             {
                 lblMsg.Text = "Problemas na consula ao servidor";
                 banco.Closing();
@@ -77,7 +77,7 @@ namespace TCC_V2
             if (!dados.IsClosed) { dados.Close(); }
             #endregion
 
-            string comando = "insert into eleitor values (" + newcode + ",'" + cad_user.Text + "'," + cad_user_nasc.Text + "," + cad_user_cpf.Text + ",'" + cad_user_ender.Text + "'," + cad_user_titulo.Text + "," + cad_user_zona.Text + "," + cad_user_sec.Text + "," + cad_user_pass1.Text + ")";
+            string comando = "insert into eleitor values (" + newcode + ",'" + cad_user.Text + "'," + cad_user_nasc.Text + ",'" + cad_user_cpf.Text + "','" + cad_user_ender.Text + "','" + cad_user_titulo.Text + "'," + cad_user_zona.Text + "," + cad_user_sec.Text + "," + cad_user_pass1.Text + ");";
 
             if (!banco.Executar(comando))
             {

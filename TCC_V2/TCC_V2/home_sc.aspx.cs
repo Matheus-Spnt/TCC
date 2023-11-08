@@ -26,6 +26,7 @@ namespace TCC_V2
         string idEleicao;
         string idEleicaoLocal;
         string idEleicaoLocal_2;
+        int usuario1;
         eleicao elect1 = new eleicao();
         usuario user1;
         cls_dado_banco_31682.cls_dado_banco_31682 banco = null;
@@ -33,14 +34,22 @@ namespace TCC_V2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] != null)
+            {
+                usuario1 = Convert.ToInt32(Session["user"]);
+            }
+            else
+            {
+                usuario1 = 0;
+            }
 
             banco = new cls_dado_banco_31682.cls_dado_banco_31682();
             banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
             MySqlDataReader dados = null;
 
             #region Votar
-            if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.td_eleitor = " + user1.GetUsuarioId() + " and cv.confirma_votado = false ;", ref dados))
+            //if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + user1.GetUsuarioId() + " and cv.confirma_votado = false ;", ref dados))
+            if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + usuario1 + " and cv.confirma_votado = false ;", ref dados))
             {
                 Panel caixa1 = new Panel();
                 caixa1.CssClass = "box_resul_3";
@@ -122,7 +131,8 @@ namespace TCC_V2
             #endregion
 
             #region Andamento
-            if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.td_eleitor = " + user1.GetUsuarioId() + " and cv.confirma_votado = true and e.data_termino is null ;", ref dados))
+            //if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + user1.GetUsuarioId() + " and cv.confirma_votado = true and e.data_termino is null ;", ref dados))
+            if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + usuario1 + " and cv.confirma_votado = true and e.data_termino is null ;", ref dados))
             {
                 Panel caixa1 = new Panel();
                 caixa1.CssClass = "box_resul_3";
@@ -209,7 +219,8 @@ namespace TCC_V2
             #endregion
 
             #region Finalizado
-            if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.td_eleitor = " + user1.GetUsuarioId() + " and cv.confirma_votado = true and e.data_termino is not null ;", ref dados))
+            //if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + user1.GetUsuarioId() + " and cv.confirma_votado = true and e.data_termino is not null ;", ref dados))
+            if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + usuario1 + " and cv.confirma_votado = true and e.data_termino is not null ;", ref dados))
             {
                 Panel caixa1 = new Panel();
                 caixa1.CssClass = "box_resul_3";
