@@ -33,8 +33,7 @@ namespace TCC_V2
 
             MySqlDataReader dados = null;
 
-
-
+            
             if (!banco.Consult("select nome_eleitor, id_eleitor, senha from eleitor where nome_eleitor = " + log_user.Text + " and senha = " + log_user_pass1.Text + ";", ref dados))
             {
                 lblMsg.Text = "Usuário não existe. Favor Cadstrar";
@@ -44,7 +43,7 @@ namespace TCC_V2
 
             if (dados.HasRows)
             {
-                
+
                 user1.SetUsuarioId(dados["id_eleitor"].ToString());
                 Response.Redirect("~/home_sc.aspx");
 

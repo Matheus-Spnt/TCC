@@ -60,7 +60,7 @@ namespace TCC_V2
             MySqlDataReader dados = null;
 
             #region Next code
-            if (!banco.Consult("Select max(id_nome)+1 from eleitor", ref dados))
+            if (!banco.Consult("Select max(id_eleitor)+1 from eleitor", ref dados))
             {
                 lblMsg.Text = "Problemas na consula ao servidor";
                 banco.Closing();
