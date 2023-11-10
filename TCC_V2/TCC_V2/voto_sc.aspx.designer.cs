@@ -183,7 +183,7 @@ namespace TCC_V2
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        //protected global::System.Web.UI.WebControls.Button btn_votar;
+        protected global::System.Web.UI.WebControls.Button btn_votar;
 
         /// <summary>
         /// Controle lblMsg.

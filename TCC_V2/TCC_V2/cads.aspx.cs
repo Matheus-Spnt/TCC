@@ -9,21 +9,7 @@ using System.IO;
 
 namespace TCC_V2
 {
-    //public partial class cads
-    //{
-    //    protected global::System.Web.UI.WebControls.TextBox cad_user;
-    //    protected global::System.Web.UI.WebControls.TextBox cad_user_nasc;
-    //    protected global::System.Web.UI.WebControls.TextBox cad_user_ender;
-    //    protected global::System.Web.UI.WebControls.TextBox cad_user_titulo;
-    //    protected global::System.Web.UI.WebControls.TextBox cad_user_zona;
-    //    protected global::System.Web.UI.WebControls.TextBox cad_user_sec;
-    //    protected global::System.Web.UI.WebControls.TextBox cad_user_pass1;
-    //    protected global::System.Web.UI.WebControls.TextBox cad_user_pass2;
-    //    protected global::System.Web.UI.WebControls.TextBox cad_user_cpf;
-    //    //protected global::System.Web.UI.WebControls.Button btn_cad;
-    //    protected global::System.Web.UI.WebControls.Label lblMsg;
-    //}
-
+    
     public partial class cads : System.Web.UI.Page
     {
 
@@ -77,7 +63,8 @@ namespace TCC_V2
             if (!dados.IsClosed) { dados.Close(); }
             #endregion
 
-            string comando = "insert into eleitor values ('" + cad_user.Text + "','" + cad_user_nasc.Text + "','" + cad_user_cpf.Text + "','" + cad_user_ender.Text + "','" + cad_user_titulo.Text + "'," + cad_user_zona.Text + "," + cad_user_sec.Text + ",'" + cad_user_pass1.Text + "');";
+            string comando = "insert into eleitor (nome_eleitor, data_nascimento, cpf, endereco, titulo_eleitor, zona_eleitoral, secao_eleitoral, senha) " +
+                " values ('" + cad_user.Text + "','" + cad_user_nasc.Text + "','" + cad_user_cpf.Text + "','" + cad_user_ender.Text + "','" + cad_user_titulo.Text + "'," + cad_user_zona.Text + "," + cad_user_sec.Text + ",'" + cad_user_pass1.Text + "');";
 
             if (!banco.Executar(comando))
             {

@@ -9,17 +9,13 @@ using System.IO;
 
 namespace TCC_V2
 {
-    //public partial class login
-    //{
-    //    protected global::System.Web.UI.WebControls.TextBox log_user;
-    //    protected global::System.Web.UI.WebControls.TextBox log_user_pass1;
-    //    protected global::System.Web.UI.WebControls.Label lblMsg;
-    //}
+    
     public partial class login : System.Web.UI.Page
     {
         usuario user1 = new usuario();
         cls_dado_banco_31682.cls_dado_banco_31682 banco = null;
         int i;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             banco = new cls_dado_banco_31682.cls_dado_banco_31682();
@@ -44,16 +40,7 @@ namespace TCC_V2
             if (dados.Read())
             {
                 Session["user"] = dados["id_eleitor"].ToString();
-                //user1.SetUsuarioId(dados["id_eleitor"].ToString());
-                //if (Session["i"] != null)
-                //{
-                //    i = Convert.ToInt32(Session["i"]);
-                //}
-                //else
-                //{
-                //    i = 0;
-                //}
-
+                
                 
 
             }

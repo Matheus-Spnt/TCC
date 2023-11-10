@@ -19,26 +19,23 @@ namespace TCC_V2
 
     public partial class home_sc : System.Web.UI.Page
     {
-        //int i;
-        //String[] guarda = new String[i];
-        //String[] guarda2 = new String[];
-        //String[] guarda3 = new String[];
-        string idEleicao;
-        string idEleicaoLocal;
-        string idEleicaoLocal_2;
+        int i;
+        List<string> guarda_eleicao = new List<string>();
+        List<string> guarda_eleicao_nm = new List<string>();
+        int idEleicao;
+        int idEleicaoLocal;
+        string nmEleicaoLocal;
         int usuario1 = 1;
-        eleicao elect1 = new eleicao();
-        usuario user1;
         cls_dado_banco_31682.cls_dado_banco_31682 banco = null;
         
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //usuario1 = Convert.ToInt32(Session["user"]);
+            usuario1 = Convert.ToInt32(Session["user"]);
 
-            
-            
+
+
 
             banco = new cls_dado_banco_31682.cls_dado_banco_31682();
             banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
@@ -46,19 +43,15 @@ namespace TCC_V2
 
             #region Nome
 
-            //if (!banco.Consult("select nome_eleitor from eleitor where id_eleitor =" + usuario1 + ")", ref dados))
-            //{
-            //    lbl_user1.Text = "Erro";
-            //}
+            if (!banco.Consult("select nome_eleitor from eleitor where id_eleitor =" + usuario1 + ";", ref dados))
+            {
+                lbl_user1.Text = "Erro";
+            }
 
-            //if (dados.Read())
-            //{
-            //    lbl_user1.Text = dados["nome_eleitor"].ToString();
-            //}
-
-
-
-
+            if (dados.Read())
+            {
+                lbl_user1.Text = dados["nome_eleitor"].ToString();
+            }
 
             #endregion
 
@@ -68,7 +61,7 @@ namespace TCC_V2
             #region Votar
             //if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + user1.GetUsuarioId() + " and cv.confirma_votado = false ;", ref dados))
             //select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = 1 and cv.confirma_votar = 0;
-            if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor =" + usuario1 + " and cv.confirma_votar = 0;", ref dados))
+            if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor =" + usuario1 + " and cv.confirma_votar = 0;", ref dados))
             {
                 Panel caixa1 = new Panel();
                 caixa1.CssClass = "box_resul_3";
@@ -100,7 +93,9 @@ namespace TCC_V2
             {
                 while (dados.Read())
                 {
-                    idEleicao = dados["id_eleicao"].ToString();
+                    guarda_eleicao.Add(dados["id_eleicao"].ToString());
+                    guarda_eleicao_nm.Add(dados["titulo"].ToString());
+                    Session["eleicao"] = dados["id_eleicao"].ToString();
                     Panel caixa1 = new Panel();
                     caixa1.CssClass = "box_resul_3";
                     Panel caixa2 = new Panel();
@@ -120,6 +115,8 @@ namespace TCC_V2
                     Button v_btn = new Button();
                     v_btn.CssClass = "v_btn_5";
                     v_btn.Text = "Votar";
+                    v_btn.Click += new EventHandler(v_btn_Click);
+                    //v_btn.Click += new EventHandler(v_btn_Click(sender, e, ref ));
                     //EventHandler p = (sender, e) => v_btn_Click(sender, e);
                     //v_btn.Click += new EventHandler(p);
                     //v_btn.Click += Response.Redirect("~/voto_sc.aspx");
@@ -155,29 +152,29 @@ namespace TCC_V2
             //if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + user1.GetUsuarioId() + " and cv.confirma_votado = true and e.data_termino is null ;", ref dados))
             if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + usuario1 + " and cv.confirma_votar = 1 and e.data_termino is null ;", ref dados))
             {
-                Panel caixa1 = new Panel();
-                caixa1.CssClass = "box_resul_3";
-                Panel caixa2 = new Panel();
-                caixa2.CssClass = "campo_voto_fc_4";
-                Panel caixa3 = new Panel();
-                caixa3.CssClass = "cria_log_2";
-                Panel img = new Panel();
-                img.CssClass = "img_mid";
+                Panel caixa5 = new Panel();
+                caixa5.CssClass = "box_resul_3";
+                Panel caixa6 = new Panel();
+                caixa6.CssClass = "campo_voto_fc_4";
+                Panel caixa7 = new Panel();
+                caixa7.CssClass = "cria_log_2";
+                Panel img2 = new Panel();
+                img2.CssClass = "img_mid";
                 Label lbl_ti2 = new Label();
                 lbl_ti2.CssClass = "texto_mini";
                 lbl_ti2.Text = "Problemas na consulta ao servidor";
                 Label lbl_par2 = new Label();
                 lbl_par2.CssClass = "par_mini";
                 lbl_par2.Text = "Problemas na consulta ao servidor";
-                Panel caixa4 = new Panel();
-                caixa4.CssClass = "v_btn_4";
-                caixa3.Controls.Add(img);
-                caixa3.Controls.Add(lbl_ti2);
-                caixa3.Controls.Add(lbl_par2);
-                caixa2.Controls.Add(caixa3);
-                caixa2.Controls.Add(caixa4);
-                caixa1.Controls.Add(caixa2);
-                Panel2.Controls.Add(caixa1);
+                Panel caixa8 = new Panel();
+                caixa8.CssClass = "v_btn_4";
+                caixa7.Controls.Add(img2);
+                caixa7.Controls.Add(lbl_ti2);
+                caixa7.Controls.Add(lbl_par2);
+                caixa6.Controls.Add(caixa7);
+                caixa6.Controls.Add(caixa8);
+                caixa5.Controls.Add(caixa6);
+                Panel2.Controls.Add(caixa5);
                 banco.Closing();
                 return;
             }
@@ -185,16 +182,15 @@ namespace TCC_V2
             {
                 while (dados.Read())
                 {
-                    //guarda2[i] = dados["e.id_eleicao"].ToString();
-                    idEleicaoLocal = dados["id_eleicao"].ToString();
-                    Panel caixa1 = new Panel();
-                    caixa1.CssClass = "box_resul_3";
-                    Panel caixa2 = new Panel();
-                    caixa2.CssClass = "campo_voto_fc_4";
-                    Panel caixa3 = new Panel();
-                    caixa3.CssClass = "cria_log_2";
-                    Panel img = new Panel();
-                    img.CssClass = "img_mid";
+                    //Session["eleicao"] = dados["id_eleicao"].ToString();
+                    Panel caixa5 = new Panel();
+                    caixa5.CssClass = "box_resul_3";
+                    Panel caixa6 = new Panel();
+                    caixa6.CssClass = "campo_voto_fc_4";
+                    Panel caixa7 = new Panel();
+                    caixa7.CssClass = "cria_log_2";
+                    Panel img2 = new Panel();
+                    img2.CssClass = "img_mid";
                     Label lbl_ti2 = new Label();
                     lbl_ti2.CssClass = "texto_mini";
                     lbl_ti2.Text = dados["titulo"].ToString();
@@ -204,36 +200,40 @@ namespace TCC_V2
                     Label v_texto = new Label();
                     v_texto.CssClass = "v_texto_1";
                     v_texto.Text = "Em andamento";
-                    Panel caixa4 = new Panel();
-                    caixa4.CssClass = "v_btn_4";
+                    Panel caixa8 = new Panel();
+                    caixa8.CssClass = "v_btn_4";
+                    Button v_btn_2 = new Button();
+                    v_btn_2.CssClass = "v_btn_5";
+                    v_btn_2.Text = "Votar";
+                    v_btn_2.Click += new EventHandler(v_btn_2Click);
                     //Button v_btn_2 = new Button();
                     //v_btn_2.CssClass = "v_btn_5";
                     //v_btn_2.Attributes["data-id-eleicao"] = idEleicaoLocal;
                     //EventHandler p = (sender, e) => v_btn_2Click(sender, e, idEleicao);
                     //v_btn_2.Click += new EventHandler(p);
 
-                    foreach (Control control in Panel2.Controls)
-                    {
-                        if (control is Button)
-                        {
-                            Button andamentoButton = (Button)control;
-                            andamentoButton.Click += new EventHandler(v_btn_2Click);
-                            andamentoButton.CommandArgument = idEleicaoLocal;
-                            andamentoButton.CssClass = "v_btn_5";
-                            caixa4.Controls.Add(andamentoButton);
-                        }
-                    }
+                    //foreach (Control control in Panel2.Controls)
+                    //{
+                    //    if (control is Button)
+                    //    {
+                    //        Button andamentoButton = (Button)control;
+                    //        andamentoButton.Click += new EventHandler(v_btn_2Click);
+                    //        andamentoButton.CommandArgument = idEleicaoLocal;
+                    //        andamentoButton.CssClass = "v_btn_5";
+                    //        caixa8.Controls.Add(andamentoButton);
+                    //    }
+                    //}
 
 
-                    caixa3.Controls.Add(img);
-                    caixa3.Controls.Add(lbl_ti2);
-                    caixa3.Controls.Add(lbl_par2);
-                    //caixa4.Controls.Add(v_btn_2);
-                    caixa2.Controls.Add(caixa3);
-                    caixa2.Controls.Add(v_texto);
-                    caixa2.Controls.Add(caixa4);
-                    caixa1.Controls.Add(caixa2);
-                    Panel2.Controls.Add(caixa1);
+                    caixa7.Controls.Add(img2);
+                    caixa7.Controls.Add(lbl_ti2);
+                    caixa7.Controls.Add(lbl_par2);
+                    caixa8.Controls.Add(v_btn_2);
+                    caixa6.Controls.Add(caixa7);
+                    caixa6.Controls.Add(v_texto);
+                    caixa6.Controls.Add(caixa8);
+                    caixa5.Controls.Add(caixa6);
+                    Panel2.Controls.Add(caixa5);
                     //i++;
                 }
             }
@@ -241,31 +241,31 @@ namespace TCC_V2
 
             #region Finalizado
             //if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + user1.GetUsuarioId() + " and cv.confirma_votado = true and e.data_termino is not null ;", ref dados))
-            if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votado from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + usuario1 + " and cv.confirma_votado = true and e.data_termino is not null ;", ref dados))
+            if (!banco.Consult("select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = " + usuario1 + " and cv.confirma_votar = 1 and e.data_termino is not null ;", ref dados))
             {
-                Panel caixa1 = new Panel();
-                caixa1.CssClass = "box_resul_3";
-                Panel caixa2 = new Panel();
-                caixa2.CssClass = "campo_voto_fc_4";
-                Panel caixa3 = new Panel();
-                caixa3.CssClass = "cria_log_2";
-                Panel img = new Panel();
-                img.CssClass = "img_mid";
+                Panel caixa9 = new Panel();
+                caixa9.CssClass = "box_resul_3";
+                Panel caixa10 = new Panel();
+                caixa10.CssClass = "campo_voto_fc_4";
+                Panel caixa11 = new Panel();
+                caixa11.CssClass = "cria_log_2";
+                Panel img3 = new Panel();
+                img3.CssClass = "img_mid";
                 Label lbl_ti3 = new Label();
                 lbl_ti3.CssClass = "texto_mini";
                 lbl_ti3.Text = "Problemas na consulta ao servidor";
                 Label lbl_par3 = new Label();
                 lbl_par3.CssClass = "par_mini";
                 lbl_par3.Text = "Problemas na consulta ao servidor";
-                Panel caixa4 = new Panel();
-                caixa4.CssClass = "v_btn_4";
-                caixa3.Controls.Add(img);
-                caixa3.Controls.Add(lbl_ti3);
-                caixa3.Controls.Add(lbl_par3);
-                caixa2.Controls.Add(caixa3);
-                caixa2.Controls.Add(caixa4);
-                caixa1.Controls.Add(caixa2);
-                Panel2.Controls.Add(caixa1);
+                Panel caixa12 = new Panel();
+                caixa12.CssClass = "v_btn_4";
+                caixa11.Controls.Add(img3);
+                caixa11.Controls.Add(lbl_ti3);
+                caixa11.Controls.Add(lbl_par3);
+                caixa10.Controls.Add(caixa11);
+                caixa10.Controls.Add(caixa12);
+                caixa9.Controls.Add(caixa10);
+                Panel2.Controls.Add(caixa9);
                 banco.Closing();
                 return;
             }
@@ -273,101 +273,94 @@ namespace TCC_V2
             {
                 while (dados.Read())
                 {
-                    //guarda3[i] = dados["e.id_eleicao"].ToString();
-                    idEleicaoLocal_2 = dados["id_eleicao"].ToString();
-                    Panel caixa1 = new Panel();
-                    caixa1.CssClass = "box_resul_3";
-                    Panel caixa2 = new Panel();
-                    caixa2.CssClass = "campo_voto_fc_4";
-                    Panel caixa3 = new Panel();
-                    caixa3.CssClass = "cria_log_2";
-                    Panel img = new Panel();
-                    img.CssClass = "img_mid";
+                    //Session["eleicao"] = dados["id_eleicao"].ToString();
+                    Panel caixa9 = new Panel();
+                    caixa9.CssClass = "box_resul_3";
+                    Panel caixa10 = new Panel();
+                    caixa10.CssClass = "campo_voto_fc_4";
+                    Panel caixa11 = new Panel();
+                    caixa11.CssClass = "cria_log_2";
+                    Panel img3 = new Panel();
+                    img3.CssClass = "img_mid";
                     Label lbl_ti3 = new Label();
                     lbl_ti3.CssClass = "texto_mini";
                     lbl_ti3.Text = dados["titulo"].ToString();
                     Label lbl_par3 = new Label();
                     lbl_par3.CssClass = "par_mini";
                     lbl_par3.Text = dados["descricao_eleicao"].ToString();
-                    Label v_texto = new Label();
-                    v_texto.CssClass = "v_texto_2";
-                    v_texto.Text = "Em andamento";
-                    Panel caixa4 = new Panel();
-                    caixa4.CssClass = "v_btn_4";
+                    Label v_texto2 = new Label();
+                    v_texto2.CssClass = "v_texto_2";
+                    v_texto2.Text = "Finalizado";
+                    Panel caixa12 = new Panel();
+                    caixa12.CssClass = "v_btn_4";
+                    Button v_btn_3 = new Button();
+                    v_btn_3.CssClass = "v_btn_5";
+                    v_btn_3.Text = "Votar";
+                    v_btn_3.Click += new EventHandler(v_btn_3Click);
                     //Button v_btn_3 = new Button();
                     //v_btn_3.CssClass = "v_btn_5";
 
-                    foreach (Control control in Panel3.Controls)
-                    {
-                        if (control is Button)
-                        {
-                            Button finalizadoButton = (Button)control;
-                            finalizadoButton.Click += new EventHandler(v_btn_3Click);
-                            finalizadoButton.CommandArgument = idEleicaoLocal_2;
-                            finalizadoButton.CssClass = "v_btn_5";
-                            caixa4.Controls.Add(finalizadoButton);
-                        }
-                    }
+                    //foreach (Control control in Panel3.Controls)
+                    //{
+                    //    if (control is Button)
+                    //    {
+                    //        Button finalizadoButton = (Button)control;
+                    //        finalizadoButton.Click += new EventHandler(v_btn_3Click);
+                    //        finalizadoButton.CommandArgument = idEleicaoLocal_2;
+                    //        finalizadoButton.CssClass = "v_btn_5";
+                    //        caixa12.Controls.Add(finalizadoButton);
+                    //    }
+                    //}
 
 
-                    caixa3.Controls.Add(img);
-                    caixa3.Controls.Add(lbl_ti3);
-                    caixa3.Controls.Add(lbl_par3);
-                    //caixa4.Controls.Add(v_btn_3);
-                    caixa2.Controls.Add(caixa3);
-                    caixa2.Controls.Add(v_texto);
-                    caixa2.Controls.Add(caixa4);
-                    caixa1.Controls.Add(caixa2);
-                    Panel2.Controls.Add(caixa1);
+                    caixa11.Controls.Add(img3);
+                    caixa11.Controls.Add(lbl_ti3);
+                    caixa11.Controls.Add(lbl_par3);
+                    caixa12.Controls.Add(v_btn_3);
+                    caixa10.Controls.Add(caixa11);
+                    caixa10.Controls.Add(v_texto2);
+                    caixa10.Controls.Add(caixa12);
+                    caixa9.Controls.Add(caixa10);
+                    Panel2.Controls.Add(caixa9);
                     //i++;
                 }
             }
             #endregion
         }
 
-        //private void v_btn_Click(object sender, EventArgs e, string idEleicao)
+
+        //protected void v_btn_Click(object sender, EventArgs e, ref string nome_eleicao)
         //{
-        //    elect1.SetEleicaoId(idEleicao);
+        //    //foreach (var item in guarda_eleicao_nm = nome_eleicao)
+        //    //{
+
+        //    //}
+        //    for (int m = 0; m < i; m++)
+        //    {
+        //        idEleicao = guarda_eleicao_nm.IndexOf(nome_eleicao);
+        //    }
+        //    //for (int j = 0; j == idEleicao; j++)
+        //    //{
+
+        //    //}
+
+        //    Session["eleicao"] = guarda_eleicao[idEleicao];
         //    Response.Redirect("~/voto_sc.aspx");
         //}
 
         protected void v_btn_Click(object sender, EventArgs e)
         {
-            //Button clickedButton = (Button)sender;
-            //string idEleicao = clickedButton.CommandArgument;
-            elect1.SetEleicaoId(idEleicao);
             Response.Redirect("~/voto_sc.aspx");
         }
 
-
-        //private void v_btn_2Click(object sender, EventArgs e, string idEleicao)
-        //{
-        //    Button clickedButton = (Button)sender;
-        //    idEleicao = clickedButton.Attributes["data-id-eleicao"];
-        //    elect1.SetEleicaoId(idEleicao);
-        //    Response.Redirect("~/result.aspx");
-        //}
-
         protected void v_btn_2Click(object sender, EventArgs e)
         {
-            Button clickedButton = (Button)sender;
-            string idEleicao = clickedButton.CommandArgument;
-            elect1.SetEleicaoId(idEleicao);
             Response.Redirect("~/result.aspx");
         }
 
 
-        //private void v_btn_3Click(object sender, EventArgs e, string idEleicao)
-        //{
-        //    elect1.SetEleicaoId(idEleicao);
-        //    Response.Redirect("~/result_2.aspx");
-        //}
-
         protected void v_btn_3Click(object sender, EventArgs e)
         {
-            Button clickedButton = (Button)sender;
-            string idEleicao = clickedButton.CommandArgument;
-            elect1.SetEleicaoId(idEleicao);
             Response.Redirect("~/result_2.aspx");
         }
 
