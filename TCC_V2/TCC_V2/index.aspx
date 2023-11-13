@@ -26,32 +26,10 @@
     <img class="text_b1" src="../IMG/title-one.svg" >
     <h1 class="funci">Como funciona ?</h1>
     <div class="space_1">
-        <img class="icones" src="../IMG+/ttl3_(1).svg" >
-        <!--Manter caso a imagem não sirva os espaços de icones estão prontos-->
-        <!-- <div class="sqr_1">svg
-            <img class="img_texto_1" src="C:\Users\vinic\Downloads\wallet.png" alt="Imagem 1">
-            <h2 class="h2_1">Faça o Login</h2>
-        </div>
-        <div class="sqr_2">
-            <img class="img_texto_1" src="file:/tcc/IMG/vote.svg" alt="Imagem 2">
-            <h2 class="h2_1">Faça seu Voto</h2>
-        </div>
-        <div class="sqr_3">
-            <img class="img_texto_1" src="caminho_da_imagem" alt="Imagem 3">
-            <h2 class="h2_1">Receba seu comprovante</h2>
-        </div>
-        <div class="sqr_4">
-            <img class="img_texto_1" src="caminho_da_imagem" alt="Imagem 4">
-            <h2 class="h2_1">E acompanhe os resultados</h2>
-        </div> -->
-
-    <!-- <img class="img_prin" src="file:///D:/tcc-last/title-one%20(1).svg" alt="">  -->
-        <!-- <img class="icones" src="file:///D:/tcc-last/ttl3%20(1).svg" > -->
-
+        <img class="icones" src="../IMG/ttl3_(1).svg" >
     </div>
     <div class="space_2"> 
         <div class="bar_sobre">
-            <!--Só colocar a img da palavra sobre-->
             <img class="img_sobre" src="../IMG/SOBRE.svg" alt="palavra sobre" >
         </div>
         <h1 class="sobre_box">MISSÃO: Fomentamos a transparencia e buscamos a lealdade do cliente buscando uma relação duradoura<br><br>VISÃO: Somos a chave para a resposta mais justa<br><br>VALORES:Orientados para o sucesso e pela busca do alto desempenho.</h1>
@@ -63,7 +41,6 @@
         </form>
     </div>
     <footer class="foot_index">
-        <!--Essas divs sem classes são as que fazem a separação em conjunto com as bars-->
         <div></div>
         <div class="bar_2"></div>
         <div></div>
