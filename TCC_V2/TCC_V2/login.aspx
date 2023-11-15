@@ -28,13 +28,13 @@
         <div class="log1">
             <form action="home_sc.aspx" target="_self">
                 <p style="font-size: 25px; margin-left: 40px; color:white;">Login</p>
-                <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Email:</p>
+                <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">CPF:</p>
                 <%--<input class="user1" type="text" name="Usuário" placeholder="user123@example.com"> <br>--%>
-                <asp:TextBox class="user1" placeholder="user123@example.com" ID="log_user" runat="server"  ></asp:TextBox> <br>
+                <asp:TextBox class="user1" placeholder="XXXXXXXXXXX" ID="log_user" runat="server"  ></asp:TextBox> <br>
                 <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Senha:</p>  
                 <%--<input class="pass1" type="password" name="Senha" placeholder="******"> <br>--%>
                 <asp:TextBox class="pass1" placeholder="******" ID="log_user_pass1" runat="server"  ></asp:TextBox> <br>
-                <a style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:lightskyblue; float: left;" href="cads.aspx">Cadastre-se</a>  
+                <a style="margin-top: 10px; visibility:hidden; margin-left: 40px; margin-bottom: -1px; color:lightskyblue; float: left;" href="cads.aspx">Cadastre-se</a>  
                 <%--<input class="btn1" type="submit" value="Entrar">--%>
                 <asp:Button class="btn1" ID="btn_log" OnClick="btn_log_Click" runat="server" Text="Entrar" />
             </form>

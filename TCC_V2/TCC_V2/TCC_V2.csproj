@@ -126,7 +126,6 @@
     <Content Include="estilo.css" />
     <Content Include="home_sc.aspx" />
     <Content Include="index.aspx" />
-    <Content Include="loading_sc.aspx" />
     <Content Include="login.aspx" />
     <Content Include="result.aspx" />
     <Content Include="result_2.aspx" />
@@ -144,6 +143,13 @@
     </Compile>
     <Compile Include="cls_con_banco_31682.cs" />
     <Compile Include="cls_dado_banco_31682.cs" />
+    <Compile Include="criar_sc.aspx.cs">
+      <DependentUpon>criar_sc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="criar_sc.aspx.designer.cs">
+      <DependentUpon>criar_sc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="eleicao.cs" />
     <Compile Include="home_sc.aspx.cs">
       <DependentUpon>home_sc.aspx</DependentUpon>

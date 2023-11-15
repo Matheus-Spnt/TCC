@@ -42,31 +42,22 @@ namespace TCC_V2
 
             #endregion
 
-            string newcode = "1";
-            MySqlDataReader dados = null;
+            string comando = "INSERT INTO eleitor (nome_eleitor, data_nascimento, cpf, endereco, titulo_eleitor, zona_eleitoral, secao_eleitoral, senha) " +
+            " VALUES (@NomeEleitor, @DataNascimento, @CpfEleitor, @Endereco, @TituloEleitor, @ZonaEleitoral, @SecaoEleitoral, @SenhaEleitor);";
 
-            #region Next code
-            if (!banco.Consult("Select count(id_eleitor)+1 from eleitor", ref dados))
+            List<MySqlParameter> parametros = new List<MySqlParameter>
             {
-                lblMsg.Text = "Problemas na consula ao servidor";
-                banco.Closing();
-                return;
-            }
+                new MySqlParameter("@NomeEleitor", cad_user.Text),
+                new MySqlParameter("@DataNascimento", cad_user_nasc.Text),
+                new MySqlParameter("@CpfEleitor", cad_user_cpf.Text),
+                new MySqlParameter("@Endereco", cad_user_ender.Text),
+                new MySqlParameter("@TituloEleitor", cad_user_titulo.Text),
+                new MySqlParameter("@ZonaEleitoral", int.Parse(cad_user_zona.Text)),
+                new MySqlParameter("@SecaoEleitoral", int.Parse(cad_user_sec.Text)),
+                new MySqlParameter("@SenhaEleitor", cad_user_pass1.Text)
+            };
 
-            if (dados.HasRows)
-            {
-                if (dados.Read())
-                {
-                    newcode = dados[0].ToString();
-                }
-            }
-            if (!dados.IsClosed) { dados.Close(); }
-            #endregion
-
-            string comando = "insert into eleitor (nome_eleitor, data_nascimento, cpf, endereco, titulo_eleitor, zona_eleitoral, secao_eleitoral, senha) " +
-                " values ('" + cad_user.Text + "','" + cad_user_nasc.Text + "','" + cad_user_cpf.Text + "','" + cad_user_ender.Text + "','" + cad_user_titulo.Text + "'," + cad_user_zona.Text + "," + cad_user_sec.Text + ",'" + cad_user_pass1.Text + "');";
-
-            if (!banco.Executar(comando))
+            if (!banco.Execute(comando, parametros))
             {
                 lblMsg.Text = "Problemas na criação de usuário";
                 banco.Closing();
@@ -76,10 +67,7 @@ namespace TCC_V2
             {
                 Response.Redirect("~/login.aspx");
             }
-            
 
         }
-
-
     }
 }

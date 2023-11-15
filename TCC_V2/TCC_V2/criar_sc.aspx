@@ -1,3 +1,5 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="criar_sc.aspx.cs" Inherits="TCC_V2.criar_sc" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +11,19 @@
 </head>
 <body>
     <header class="hedr2">
-        <img class="user_pic">
-        <p class="user_name">placeholder</p>
+        <img class="user_pic"  src="../IMG/Mask_group.svg" >
+        <%--<p class="user_name">João da Silva</p>--%>
+        <asp:Label ID="lbl_user1" class="user_name" runat="server" Text="Joao da Silva"></asp:Label>
         <h1 class="h1_user">SANTA ELEGE</h1>
-        <a class="link_leave" href="login.html">Sair -></a>
+        <a class="link_leave" href="index.aspx">Sair -></a>
     </header>
     <div class="bar_4"></div>
+    <div class="bar_4"></div>
     <div class="vota" >
-        <!--A imgaem e o local dela já está colocada só é necessário a verificação da mesma-->
-        <img class="vota_logo" src="tcc/IMG/sparkles.svg" alt="Icone de votação">
+        <img class="vota_logo" src="../IMG/sparkles.svg" alt="Icone de votacao">
         <div class="bar_5" ></div>
-        <p class="vota_txt_2" >Votações</p>
-        <p class="vota_txt_2" >Resultados</p>
-        <p class="vota_txt_4" >Criar</p>
+        <p class="vota_txt_2" >Cadastrar</p>
+        <p class="vota_txt_2" >Criar</p> 
     </div>
     <div class="box_resul_2" >
         <div class="campo_voto_fc_3">

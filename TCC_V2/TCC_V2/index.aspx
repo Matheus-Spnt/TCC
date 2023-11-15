@@ -9,11 +9,7 @@
     <style>
         body {
             font-family: 'Oxanium', sans-serif;
-        }
-        .img_prin {
-            margin-left: -1000px; 
-        }
-        
+        }        
     </style>
     <title>Santa Elege</title>
 </head>  
@@ -22,7 +18,7 @@
         <h1 class="h1_main">SANTA ELEGE</h1>
         <a class="link_log" href="login.aspx">Login</a>
     </header>
-    <img class="img_prin" src="" alt=" ">
+    <img class="img_prin" src="../IMG/Milky Way.svg" alt=" ">
     <img class="text_b1" src="../IMG/title-one.svg" >
     <h1 class="funci">Como funciona ?</h1>
     <div class="space_1">
@@ -36,8 +32,8 @@
     </div>
     <div class="space_3">
         <h1 class="txt_cad">FAÇA PARTE DE ALGO NOVO</h1>
-        <form action="cads.aspx" target="_self" runat="server" >
-            <input class="btn_cad" type="submit" value="Cadastro">
+        <form action="login.aspx" target="_self" runat="server" >
+            <input class="btn_cad" type="submit" value="Logar">
         </form>
     </div>
     <footer class="foot_index">

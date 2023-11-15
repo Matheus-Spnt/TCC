@@ -53,7 +53,7 @@
         </div>
     </div>--%>
     </asp:Panel>
-    <h2 class="titulo_reco_2" >Votacoes</h2>
+    <h2 class="titulo_reco_2" >Acompanhamento</h2>
     
     <asp:Panel ID="Panel2" runat="server" >
     <%--<%--<div class="box_resul_4" >
