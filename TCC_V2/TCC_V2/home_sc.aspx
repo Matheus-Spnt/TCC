@@ -1,7 +1,7 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home_sc.aspx.cs" Inherits="TCC_V2.home_sc" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
     </header>
     <div class="bar_4"></div>
     <h2 class="titulo_reco" >Recomendado</h2>
-    <div class="vota" >
+    <div class="vota_1" >
         <img class="vota_logo" src="../IMG/sparkles.svg" alt="Icone de votacao">
         <div class="bar_5" ></div>
         <p class="vota_txt_2" >Votacoes</p>
@@ -53,9 +53,9 @@
         </div>
     </div>--%>
     </asp:Panel>
-    <h2 class="titulo_reco_2" >Votacoes</h2>
+    <h2 class="titulo_reco_2" >Acompanhamento</h2>
     
-    <asp:Panel ID="Panel2" runat="server">
+    <asp:Panel ID="Panel2" runat="server" >
     <%--<%--<div class="box_resul_4" >
         <div class="campo_voto_fc_4">                
             <div class="cria_log_2" >
@@ -75,7 +75,7 @@
     </div>--%>
     </asp:Panel>
     
-    <asp:Panel ID="Panel3" runat="server">
+    <asp:Panel ID="Panel3" runat="server" >
     <%--<div class="box_resul_4" >
         <div class="campo_voto_fc_4">                
             <div class="cria_log_2" >

@@ -1,7 +1,7 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="result.aspx.cs" Inherits="TCC_V2.result" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,9 +18,10 @@
 <body>
     <header class="hedr2">
         <img class="user_pic"  src="../IMG/Mask_group.svg" >
-        <p class="user_name">João da Silva</p>
+        <%--<p class="user_name">João da Silva</p>--%>
+        <asp:Label ID="lbl_user1" class="user_name" runat="server" Text="Joao da Silva"></asp:Label>
         <h1 class="h1_user">SANTA ELEGE</h1>
-        <a class="link_leave" href="home_sc.html">Voltar -></a>
+        <a class="link_leave" href="home_sc.aspx">Voltar -></a>
     </header>
     <div class="bar_4"></div>
     <%--<h1 class="titilo_vota" >Governador</h1>--%>
@@ -46,9 +47,9 @@
         <div class="campo_voto_fc_2">
             <img class="user_pic_3">
             <%--<p class="user_name_3">Alexsandro Sousa Lima</p>--%>
-            <asp:Panel ID="Panel1" runat="server">
+            <%--<asp:Panel ID="Panel1" runat="server">--%>
                 <asp:Label ID="lbl_can1" class="user_name_3" runat="server" Text=""></asp:Label>
-            </asp:Panel>
+            <%--</asp:Panel>--%>
             
         </div>
         

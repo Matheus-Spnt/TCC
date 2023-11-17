@@ -78,6 +78,68 @@ namespace cls_dado_banco_31682
                 return false;
             }
         }
+
+        public bool ConsultaPar(string comandoSELECT, List<MySqlParameter> valores, ref MySqlDataReader dados)
+        {
+            if (Conectar())
+            {
+                bool worked = true;
+                MySqlCommand cSQL = new MySqlCommand(comandoSELECT, conexao);
+
+                // Adicione parâmetros à consulta
+                cSQL.Parameters.AddRange(valores.ToArray());
+
+                try
+                {
+                    dados = cSQL.ExecuteReader();
+                }
+                catch
+                {
+                    worked = false;
+                }
+                return worked;
+            }
+            else
+            {
+                return false;
+            }
+
+            //try
+            //{
+            //    bool worked = true;
+            //    if (Conectar())
+            //    {
+            //        MySqlCommand cSQL = new MySqlCommand(comandoSELECT, conexao);
+            //        cSQL.Parameters.Clear();
+            //        for (int i = 0; i < valores.Count; i++)
+            //        {
+            //            cSQL.Parameters.Add(valores[i]);
+            //        }
+            //        try
+            //        {
+            //            cSQL.ExecuteReader();
+
+            //        }
+            //        catch
+            //        {
+            //            worked = false;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //    Closing();
+            //    return worked;
+            //}
+            //catch
+            //{
+
+            //    return false;
+            //}
+        }
+
+
         #endregion
 
         #region Executar
@@ -102,6 +164,7 @@ namespace cls_dado_banco_31682
             {
                 return false;
             }
+            
         }
         #endregion
 

@@ -9,6 +9,7 @@ namespace TCC_V2
     {
 
         public String eleicao_id;
+        public String eleicao_nome;
 
         public void SetEleicaoId(String _eleicao_id)
         {
@@ -18,6 +19,15 @@ namespace TCC_V2
         public String GetEleicaoId()
         {
             return eleicao_id;
+        }
+        public void SetEleicaoNome(String _eleicao_nome)
+        {
+            eleicao_nome = _eleicao_nome;
+        }
+
+        public String GetEleicaoNome()
+        {
+            return eleicao_nome;
         }
 
 

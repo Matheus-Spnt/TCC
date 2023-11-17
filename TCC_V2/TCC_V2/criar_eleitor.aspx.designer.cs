@@ -11,7 +11,7 @@ namespace TCC_V2
 {
 
 
-    public partial class voto_sc
+    public partial class criar_eleitor
     {
 
         /// <summary>
@@ -24,166 +24,85 @@ namespace TCC_V2
         protected global::System.Web.UI.WebControls.Label lbl_user1;
 
         /// <summary>
-        /// Controle lbl_nm.
+        /// Controle cad_user.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nm;
+        protected global::System.Web.UI.WebControls.TextBox cad_user;
 
         /// <summary>
-        /// Controle lbl_part.
+        /// Controle cad_user_nasc.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_part;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_nasc;
 
         /// <summary>
-        /// Controle lbl_num.
+        /// Controle cad_user_ender.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_num;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_ender;
 
         /// <summary>
-        /// Controle rbd_1.
+        /// Controle cad_user_titulo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbd_1;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_titulo;
 
         /// <summary>
-        /// Controle lbl_nm2.
+        /// Controle cad_user_zona.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nm2;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_zona;
 
         /// <summary>
-        /// Controle lbl_part2.
+        /// Controle cad_user_sec.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_part2;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_sec;
 
         /// <summary>
-        /// Controle lbl_num2.
+        /// Controle cad_user_pass1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_num2;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_pass1;
 
         /// <summary>
-        /// Controle rbd_2.
+        /// Controle cad_user_pass2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbd_2;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_pass2;
 
         /// <summary>
-        /// Controle lbl_nm3.
+        /// Controle cad_user_cpf.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nm3;
-
-        /// <summary>
-        /// Controle lbl_part3.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_part3;
-
-        /// <summary>
-        /// Controle lbl_num3.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_num3;
-
-        /// <summary>
-        /// Controle rbd_3.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbd_3;
-
-        /// <summary>
-        /// Controle lbl_nm4.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nm4;
-
-        /// <summary>
-        /// Controle lbl_part4.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_part4;
-
-        /// <summary>
-        /// Controle lbl_num4.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_num4;
-
-        /// <summary>
-        /// Controle rdb_4.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdb_4;
-
-        /// <summary>
-        /// Controle chb_1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chb_1;
-
-        /// <summary>
-        /// Controle btn_votar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_votar;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_cpf;
 
         /// <summary>
         /// Controle lblMsg.
@@ -193,5 +112,23 @@ namespace TCC_V2
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMsg;
+
+        /// <summary>
+        /// Controle cbm1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbm1;
+
+        /// <summary>
+        /// Controle btn_cad.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_cad;
     }
 }

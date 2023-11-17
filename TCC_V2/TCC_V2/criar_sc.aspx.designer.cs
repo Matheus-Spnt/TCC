@@ -11,7 +11,7 @@ namespace TCC_V2
 {
 
 
-    public partial class result_2
+    public partial class criar_sc
     {
 
         /// <summary>
@@ -24,48 +24,66 @@ namespace TCC_V2
         protected global::System.Web.UI.WebControls.Label lbl_user1;
 
         /// <summary>
-        /// Controle lbl_text2.
+        /// Controle txt_titulo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_text2;
+        protected global::System.Web.UI.WebControls.TextBox txt_titulo;
 
         /// <summary>
-        /// Controle lbl_can1.
+        /// Controle txt_local.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_can1;
+        protected global::System.Web.UI.WebControls.TextBox txt_local;
 
         /// <summary>
-        /// Controle lbl_can2.
+        /// Controle txt_data_inicio.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_can2;
+        protected global::System.Web.UI.WebControls.TextBox txt_data_inicio;
 
         /// <summary>
-        /// Controle lbl_can3.
+        /// Controle txt_data_fim.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_can3;
+        protected global::System.Web.UI.WebControls.TextBox txt_data_fim;
 
         /// <summary>
-        /// Controle lbl_can4.
+        /// Controle FileUpload1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_can4;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+
+        /// <summary>
+        /// Controle cbm1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbm1;
+
+        /// <summary>
+        /// Controle btn_upload.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_upload;
     }
 }

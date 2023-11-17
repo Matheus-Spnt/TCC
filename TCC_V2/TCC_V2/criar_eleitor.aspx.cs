@@ -7,21 +7,17 @@ using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 using System.IO;
 
+
 namespace TCC_V2
 {
-    
-    public partial class cads : System.Web.UI.Page
+    public partial class criar_eleitor : System.Web.UI.Page
     {
-
         cls_dado_banco_31682.cls_dado_banco_31682 banco = null;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             banco = new cls_dado_banco_31682.cls_dado_banco_31682();
             banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
         }
-
-
         protected void btn_cad_Click(object sender, EventArgs e)
         {
             #region Teste
@@ -65,7 +61,7 @@ namespace TCC_V2
             }
             else
             {
-                Response.Redirect("~/login.aspx");
+                Response.Redirect("~/user_sc.aspx");
             }
 
         }

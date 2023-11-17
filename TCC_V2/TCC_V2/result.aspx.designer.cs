@@ -15,6 +15,15 @@ namespace TCC_V2
     {
 
         /// <summary>
+        /// Controle lbl_user1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_user1;
+
+        /// <summary>
         /// Controle lbl_text1.
         /// </summary>
         /// <remarks>
@@ -22,15 +31,6 @@ namespace TCC_V2
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_text1;
-
-        /// <summary>
-        /// Controle Panel1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
         /// Controle lbl_can1.

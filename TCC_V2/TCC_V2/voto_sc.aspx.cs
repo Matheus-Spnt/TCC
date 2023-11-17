@@ -9,44 +9,12 @@ using System.IO;
 
 namespace TCC_V2
 {
-    //public partial class voto_sc
-    //{
-    //    #region Candidato1
-    //    protected global::System.Web.UI.WebControls.Label lbl_nm;
-    //    protected global::System.Web.UI.WebControls.Label lbl_part;
-    //    protected global::System.Web.UI.WebControls.Label lbl_num;
-    //    protected global::System.Web.UI.WebControls.RadioButton rbd_1;
-    //    #endregion
-    //    #region Candidato2
-    //    protected global::System.Web.UI.WebControls.Label lbl_nm2;
-    //    protected global::System.Web.UI.WebControls.Label lbl_part2;
-    //    protected global::System.Web.UI.WebControls.Label lbl_num2;
-    //    protected global::System.Web.UI.WebControls.RadioButton rbd_2;
-    //    #endregion
-    //    #region Candidato3
-    //    protected global::System.Web.UI.WebControls.Label lbl_nm3;
-    //    protected global::System.Web.UI.WebControls.Label lbl_part3;
-    //    protected global::System.Web.UI.WebControls.Label lbl_num3;
-    //    protected global::System.Web.UI.WebControls.RadioButton rbd_3;
-    //    #endregion
-    //    #region Candidato4
-    //    protected global::System.Web.UI.WebControls.Label lbl_nm4;
-    //    protected global::System.Web.UI.WebControls.Label lbl_part4;
-    //    protected global::System.Web.UI.WebControls.Label lbl_num4;
-    //    protected global::System.Web.UI.WebControls.RadioButton rbd_4;
-    //    #endregion
-    //    protected global::System.Web.UI.WebControls.CheckBox chb_1;
-    //    protected global::System.Web.UI.WebControls.Label lblMsg;
-
-
-    //}
-
     public partial class voto_sc : System.Web.UI.Page
     {
-        String[] guarda = new String[4];
-        String[] guarda2 = new String[4];
-        usuario user1;
-        eleicao elect1;
+        String[] guarda_candidato = new String[4];
+        String[] guarda_partido = new String[4];
+        int eleicao1;
+        int usuario1;
         cls_dado_banco_31682.cls_dado_banco_31682 banco = null;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -54,123 +22,169 @@ namespace TCC_V2
             banco = new cls_dado_banco_31682.cls_dado_banco_31682();
             banco.linhaConexao = cls_con_banco_31682.cls_con_banco_31682.Local();
 
-            
+            eleicao1 = Convert.ToInt32(Session["eleicao"]);
+            usuario1 = Convert.ToInt32(Session["user"]);
+
             int i = 0;
 
             MySqlDataReader dados = null;
 
-            if (!banco.Consult("select c.id_candidato, e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_eleicao =" + elect1.GetEleicaoId() +";", ref dados))
+            #region Nome
+
+            string nomeQuery = "SELECT nome_eleitor FROM eleitor WHERE id_eleitor = @UsuarioID;";
+            List<MySqlParameter> nomeParametros = new List<MySqlParameter>
+            {
+                new MySqlParameter("@UsuarioID", usuario1)
+            };
+
+            if (!banco.ConsultaPar(nomeQuery, nomeParametros, ref dados))
+            {
+                lbl_user1.Text = "Erro";
+            }
+
+            if (dados.Read())
+            {
+                lbl_user1.Text = dados["nome_eleitor"].ToString();
+            }
+
+            #endregion
+
+            string candidatoEleicaoQuery = "SELECT c.id_candidato, e.id_eleicao FROM candidato c JOIN eleicao e ON (c.id_eleicao = e.id_eleicao) WHERE c.id_eleicao = @EleicaoID;";
+            List<MySqlParameter> candidatoEleicaoParametros = new List<MySqlParameter>
+            {
+                new MySqlParameter("@EleicaoID", eleicao1)
+            };
+
+            if (!banco.ConsultaPar(candidatoEleicaoQuery, candidatoEleicaoParametros, ref dados))
             {
                 lblMsg.Text = "Problemas na consulta ao servidor";
                 banco.Closing();
                 return;
             }
+
             if (dados.HasRows)
             {
-                while (dados.Read() || i < 4)
+                while (dados.Read())
                 {
-                    guarda[i] = dados["c.id_candidato"].ToString();
+                    guarda_candidato[i] = dados["id_candidato"].ToString();
                     i++;
                 }
             }
 
-
             #region Candidato1
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[0] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
+            string detalhesCandidatoQuery = "SELECT c.nome_candidato, c.id_candidato, c.numero_urna, p.nome, p.id_partido, e.id_eleicao FROM candidato c JOIN eleicao e ON (c.id_eleicao = e.id_eleicao) JOIN partido p ON (c.id_partido = p.id_partido) WHERE c.id_candidato = @CandidatoID AND c.id_eleicao = @EleicaoID;";
+            List<MySqlParameter> detalhesCandidatoParametros = new List<MySqlParameter>
+            {
+                new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[0])),
+                new MySqlParameter("@EleicaoID", eleicao1)
+            };
+
+            if (!banco.ConsultaPar(detalhesCandidatoQuery, detalhesCandidatoParametros, ref dados))
             {
                 lblMsg.Text = "Problemas na consulta ao servidor";
                 banco.Closing();
                 return;
             }
 
-            if (dados.HasRows)
+            if (dados.Read())
             {
-                lbl_nm.Text = dados["c.nm_candidato"].ToString();
-                lbl_part.Text = dados["p.nome_partido"].ToString();
-                lbl_num.Text = dados["c.numero_urna"].ToString();
-                guarda2[0] = dados["p.id_partido"].ToString();
+                lbl_nm.Text = dados["nome_candidato"].ToString();
+                lbl_part.Text = dados["nome"].ToString();
+                lbl_num.Text = dados["numero_urna"].ToString();
+                guarda_partido[0] = dados["id_partido"].ToString();
             }
             #endregion
 
+
             #region Candidato2
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[1] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
+            detalhesCandidatoQuery = "SELECT c.nome_candidato, c.id_candidato, c.numero_urna, p.nome, p.id_partido, e.id_eleicao FROM candidato c JOIN eleicao e ON (c.id_eleicao = e.id_eleicao) JOIN partido p ON (c.id_partido = p.id_partido) WHERE c.id_candidato = @CandidatoID AND c.id_eleicao = @EleicaoID;";
+            List<MySqlParameter> detalhesCandidatoParametros2 = new List<MySqlParameter>
+            {
+                new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[1])),
+                new MySqlParameter("@EleicaoID", eleicao1)
+            };
+
+            if (!banco.ConsultaPar(detalhesCandidatoQuery, detalhesCandidatoParametros2, ref dados))
             {
                 lblMsg.Text = "Problemas na consulta ao servidor";
                 banco.Closing();
                 return;
             }
 
-            if (dados.HasRows)
+            if (dados.Read())
             {
-                lbl_nm2.Text = dados["c.nm_candidato"].ToString();
-                lbl_part2.Text = dados["p.nome_partido"].ToString();
-                lbl_num2.Text = dados["c.numero_urna"].ToString();
-                guarda2[1] = dados["p.id_partido"].ToString();
+                lbl_nm2.Text = dados["nome_candidato"].ToString();
+                lbl_part2.Text = dados["nome"].ToString();
+                lbl_num2.Text = dados["numero_urna"].ToString();
+                guarda_partido[1] = dados["id_partido"].ToString();
             }
             #endregion
 
             #region Candidato3
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[2] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
+            detalhesCandidatoQuery = "SELECT c.nome_candidato, c.id_candidato, c.numero_urna, p.nome, p.id_partido, e.id_eleicao FROM candidato c JOIN eleicao e ON (c.id_eleicao = e.id_eleicao) JOIN partido p ON (c.id_partido = p.id_partido) WHERE c.id_candidato = @CandidatoID AND c.id_eleicao = @EleicaoID;";
+            List<MySqlParameter> detalhesCandidatoParametros3 = new List<MySqlParameter>
+            {
+                new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[2])),
+                new MySqlParameter("@EleicaoID", eleicao1)
+            };
+
+            if (!banco.ConsultaPar(detalhesCandidatoQuery, detalhesCandidatoParametros3, ref dados))
             {
                 lblMsg.Text = "Problemas na consulta ao servidor";
                 banco.Closing();
                 return;
             }
 
-            if (dados.HasRows)
+            if (dados.Read())
             {
-                lbl_nm3.Text = dados["c.nm_candidato"].ToString();
-                lbl_part3.Text = dados["p.nome_partido"].ToString();
-                lbl_num3.Text = dados["c.numero_urna"].ToString();
-                guarda2[2] = dados["p.id_partido"].ToString();
+                lbl_nm3.Text = dados["nome_candidato"].ToString();
+                lbl_part3.Text = dados["nome"].ToString();
+                lbl_num3.Text = dados["numero_urna"].ToString();
+                guarda_partido[2] = dados["id_partido"].ToString();
             }
             #endregion
 
             #region Candidato4
-            if (!banco.Consult("select c.nm_candidato, c.id_candidato, c.numero_urna, p.nome_partido, p.id_partido,e.id_eleicao from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) join partido p on(c.id_partido = p.id_partido) where c.id_candidato = " + guarda[3] + " and c.id_eleicao =" + elect1.GetEleicaoId() + ";", ref dados))
+            detalhesCandidatoQuery = "SELECT c.nome_candidato, c.id_candidato, c.numero_urna, p.nome, p.id_partido, e.id_eleicao FROM candidato c JOIN eleicao e ON (c.id_eleicao = e.id_eleicao) JOIN partido p ON (c.id_partido = p.id_partido) WHERE c.id_candidato = @CandidatoID AND c.id_eleicao = @EleicaoID;";
+            List<MySqlParameter> detalhesCandidatoParametros4 = new List<MySqlParameter>
+            {
+                new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[3])),
+                new MySqlParameter("@EleicaoID", eleicao1)
+            };
+
+            if (!banco.ConsultaPar(detalhesCandidatoQuery, detalhesCandidatoParametros4, ref dados))
             {
                 lblMsg.Text = "Problemas na consulta ao servidor";
                 banco.Closing();
                 return;
             }
 
-            if (dados.HasRows)
+            if (dados.Read())
             {
-                lbl_nm.Text = dados["c.nm_candidato"].ToString();
-                lbl_part.Text = dados["p.nome_partido"].ToString();
-                lbl_num.Text = dados["c.numero_urna"].ToString();
-                guarda2[3] = dados["p.id_partido"].ToString();
+                lbl_nm4.Text = dados["nome_candidato"].ToString();
+                lbl_part4.Text = dados["nome"].ToString();
+                lbl_num4.Text = dados["numero_urna"].ToString();
+                guarda_partido[3] = dados["id_partido"].ToString();
             }
             #endregion
         }
 
-        private void btn_votar(object sender, EventArgs e)
+        protected void btn_votar_Click(object sender, EventArgs e)
         {
             #region Candidato1
             if (rbd_1.Checked && chb_1.Checked)
             {
-                string newcode = "1";
-                MySqlDataReader dados = null;
-                if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
+                
+                string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
+                List<MySqlParameter> insertVotoParametros = new List<MySqlParameter>
                 {
-                    lblMsg.Text = "Problemas na consula ao servidor";
-                    banco.Closing();
-                    return;
-                }
+                    new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
+                    new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[0])),
+                    new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[0])),
+                    new MySqlParameter("@EleitorID", usuario1)
+                };
 
-                if (dados.HasRows)
-                {
-                    if (dados.Read())
-                    {
-                        newcode = dados[0].ToString();
-                    }
-                }
-                if (!dados.IsClosed) { dados.Close(); }
-
-
-                string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[0] + ", " + guarda[0] + " )";
-
-                if (!banco.Executar(comando))
+                if (!banco.Execute(insertVotoQuery, insertVotoParametros))
                 {
                     lblMsg.Text = "Problemas na votação";
                     banco.Closing();
@@ -178,9 +192,14 @@ namespace TCC_V2
                 }
                 else
                 {
-                    comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
+                    string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
+                    List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+                    {
+                        new MySqlParameter("@EleitorID", usuario1),
+                        new MySqlParameter("@EleicaoID", eleicao1)
+                    };
 
-                    if (!banco.Executar(comando))
+                    if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
                     {
                         lblMsg.Text = "Problemas na votação";
                         banco.Closing();
@@ -191,47 +210,24 @@ namespace TCC_V2
                         Response.Redirect("~/home_sc.aspx");
                     }
                 }
-
-
-
             }
-            #endregion
 
-            #region Candidato2
-            if (rbd_2.Checked && chb_1.Checked)
+            #endregion
+            else
             {
-                string newcode = "1";
-                MySqlDataReader dados = null;
-                if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
+                #region Candidato2
+                if (rbd_2.Checked && chb_1.Checked)
                 {
-                    lblMsg.Text = "Problemas na consula ao servidor";
-                    banco.Closing();
-                    return;
-                }
-
-                if (dados.HasRows)
-                {
-                    if (dados.Read())
+                    string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
+                    List<MySqlParameter> insertVotoParametros2 = new List<MySqlParameter>
                     {
-                        newcode = dados[0].ToString();
-                    }
-                }
-                if (!dados.IsClosed) { dados.Close(); }
+                        new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
+                        new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[1])),
+                        new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[1])),
+                        new MySqlParameter("@EleitorID", usuario1)
+                    };
 
-
-                string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[1] + ", " + guarda[1] + " )";
-
-                if (!banco.Executar(comando))
-                {
-                    lblMsg.Text = "Problemas na votação";
-                    banco.Closing();
-                    return;
-                }
-                else
-                {
-                    comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
-
-                    if (!banco.Executar(comando))
+                    if (!banco.Execute(insertVotoQuery, insertVotoParametros2))
                     {
                         lblMsg.Text = "Problemas na votação";
                         banco.Closing();
@@ -239,121 +235,116 @@ namespace TCC_V2
                     }
                     else
                     {
-                        Response.Redirect("~/home_sc.aspx");
+                        string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
+                        List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+                        {
+                            new MySqlParameter("@EleitorID", usuario1),
+                            new MySqlParameter("@EleicaoID", eleicao1)
+                        };
+
+                        if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
+                        {
+                            lblMsg.Text = "Problemas na votação";
+                            banco.Closing();
+                            return;
+                        }
+                        else
+                        {
+                            Response.Redirect("~/home_sc.aspx");
+                        }
                     }
                 }
-
-
-
-            }
-            #endregion
-
-            #region Candidato3
-            if (rbd_3.Checked && chb_1.Checked)
-            {
-                string newcode = "1";
-                MySqlDataReader dados = null;
-                if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
-                {
-                    lblMsg.Text = "Problemas na consula ao servidor";
-                    banco.Closing();
-                    return;
-                }
-
-                if (dados.HasRows)
-                {
-                    if (dados.Read())
-                    {
-                        newcode = dados[0].ToString();
-                    }
-                }
-                if (!dados.IsClosed) { dados.Close(); }
-
-
-                string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[2] + ", " + guarda[2] + " )";
-
-                if (!banco.Executar(comando))
-                {
-                    lblMsg.Text = "Problemas na votação";
-                    banco.Closing();
-                    return;
-                }
+                #endregion
                 else
                 {
-                    comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
-
-                    if (!banco.Executar(comando))
+                    #region Candidato3
+                    if (rbd_3.Checked && chb_1.Checked)
                     {
-                        lblMsg.Text = "Problemas na votação";
-                        banco.Closing();
-                        return;
+                        string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
+                        List<MySqlParameter> insertVotoParametros3 = new List<MySqlParameter>
+                        {
+                            new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
+                            new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[2])),
+                            new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[2])),
+                            new MySqlParameter("@EleitorID", usuario1)
+                        };
+
+                        if (!banco.Execute(insertVotoQuery, insertVotoParametros3))
+                        {
+                            lblMsg.Text = "Problemas na votação";
+                            banco.Closing();
+                            return;
+                        }
+                        else
+                        {
+                            string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
+                            List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+                            {
+                                new MySqlParameter("@EleitorID", usuario1),
+                                new MySqlParameter("@EleicaoID", eleicao1)
+                            };
+
+                            if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
+                            {
+                                lblMsg.Text = "Problemas na votação";
+                                banco.Closing();
+                                return;
+                            }
+                            else
+                            {
+                                Response.Redirect("~/home_sc.aspx");
+                            }
+                        }
+
+
+
                     }
+                    #endregion
                     else
                     {
-                        Response.Redirect("~/home_sc.aspx");
+                        #region Candidato4
+                        if (rdb_4.Checked && chb_1.Checked)
+                        {
+                            string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
+                            List<MySqlParameter> insertVotoParametros4 = new List<MySqlParameter>
+                            {
+                                new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
+                                new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[3])),
+                                new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[3])),
+                                new MySqlParameter("@EleitorID", usuario1)
+                            };
+
+                            if (!banco.Execute(insertVotoQuery, insertVotoParametros4))
+                            {
+                                lblMsg.Text = "Problemas na votação";
+                                banco.Closing();
+                                return;
+                            }
+                            else
+                            {
+                                string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
+                                List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+                                {
+                                    new MySqlParameter("@EleitorID", usuario1),
+                                    new MySqlParameter("@EleicaoID", eleicao1)
+                                };
+
+                                if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
+                                {
+                                    lblMsg.Text = "Problemas na votação";
+                                    banco.Closing();
+                                    return;
+                                }
+                                else
+                                {
+                                    Response.Redirect("~/home_sc.aspx");
+                                }
+                            }
+                        }
+                        #endregion
                     }
                 }
-
-
-
-            }
-            #endregion
-
-            #region Candidato4
-            if (rdb_4.Checked && chb_1.Checked)
-            {
-                string newcode = "1";
-                MySqlDataReader dados = null;
-                if (!banco.Consult("Select max(id_nome)+1 from voto", ref dados))
-                {
-                    lblMsg.Text = "Problemas na consula ao servidor";
-                    banco.Closing();
-                    return;
-                }
-
-                if (dados.HasRows)
-                {
-                    if (dados.Read())
-                    {
-                        newcode = dados[0].ToString();
-                    }
-                }
-                if (!dados.IsClosed) { dados.Close(); }
-
-
-                string comando = "insert into voto values (" + newcode + ", " + user1.GetUsuarioId() + ", " + guarda2[3] + ", " + guarda[3] + " )";
-
-                if (!banco.Executar(comando))
-                {
-                    lblMsg.Text = "Problemas na votação";
-                    banco.Closing();
-                    return;
-                }
-                else
-                {
-                    comando = "insert into eleitor confirma_voto (" + elect1.GetEleicaoId() + ", " + user1.GetUsuarioId() + ", true)";
-
-                    if (!banco.Executar(comando))
-                    {
-                        lblMsg.Text = "Problemas na votação";
-                        banco.Closing();
-                        return;
-                    }
-                    else
-                    {
-                        Response.Redirect("~/home_sc.aspx");
-                    }
-                }
-
-
-
-            }
-            #endregion
+            }       
         }
-
-
-
-
     }
-
 }
