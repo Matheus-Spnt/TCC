@@ -11,7 +11,7 @@ namespace TCC_V2
 {
 
 
-    public partial class criar_sc
+    public partial class criar_eleitor
     {
 
         /// <summary>
@@ -24,49 +24,94 @@ namespace TCC_V2
         protected global::System.Web.UI.WebControls.Label lbl_user1;
 
         /// <summary>
-        /// Controle txt_titulo.
+        /// Controle cad_user.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_titulo;
+        protected global::System.Web.UI.WebControls.TextBox cad_user;
 
         /// <summary>
-        /// Controle txt_local.
+        /// Controle cad_user_nasc.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_local;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_nasc;
 
         /// <summary>
-        /// Controle txt_data_inicio.
+        /// Controle cad_user_ender.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_data_inicio;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_ender;
 
         /// <summary>
-        /// Controle txt_data_fim.
+        /// Controle cad_user_titulo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_data_fim;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_titulo;
 
         /// <summary>
-        /// Controle FileUpload1.
+        /// Controle cad_user_zona.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.TextBox cad_user_zona;
+
+        /// <summary>
+        /// Controle cad_user_sec.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cad_user_sec;
+
+        /// <summary>
+        /// Controle cad_user_pass1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cad_user_pass1;
+
+        /// <summary>
+        /// Controle cad_user_pass2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cad_user_pass2;
+
+        /// <summary>
+        /// Controle cad_user_cpf.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cad_user_cpf;
+
+        /// <summary>
+        /// Controle lblMsg.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMsg;
 
         /// <summary>
         /// Controle cbm1.
@@ -78,12 +123,12 @@ namespace TCC_V2
         protected global::System.Web.UI.WebControls.CheckBox cbm1;
 
         /// <summary>
-        /// Controle btn_upload.
+        /// Controle btn_cad.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_upload;
+        protected global::System.Web.UI.WebControls.Button btn_cad;
     }
 }

@@ -463,8 +463,8 @@ body{
 
 .bar_7{
     width: 2px;
-    height: 900px;
-    margin-top: -890px;
+    height: 575px;
+    margin-top: -460px;
     margin-left: 150px;
     background-color: rgba(255, 255, 255, 0.836);
     float: left;
@@ -476,7 +476,7 @@ body{
     width: 200px;
     height: 30px;
     margin-left: 752px;
-    margin-top: -875.5px;
+    margin-top: -550.5px;
     float: left;
 }
 
@@ -814,11 +814,12 @@ body{
 
 /* Criar_sc */
 
-.box_resul_2{
+.box_resul_2 {
     /* background-color: #750f16; */
-    background-image: linear-gradient(#750f16, #260608);
-    width: 950px;
-    height: 560px;
+    background-color: rgba(255, 255, 255,0.20);
+    /*background-image: linear-gradient(#750f16, #260608);*/
+    width: 550px;
+    height: 625px;
     margin-left: 150px;
     margin-top: -525px;
     border: 5px;
@@ -829,13 +830,13 @@ body{
 .campo_voto_fc_3{
     height: 100px;
     width: 980px;
-    margin-left: -10px;
+    margin-left: 170px;
     margin-top: 40px;
 }
 
 .cria_log{
     float: left;
-    height: 270px;
+    height: 480px;
     width: 245px;
 }
 
@@ -843,7 +844,7 @@ body{
     clear: left;
     width: 400px;
     height: 100px;
-    margin-left: 275px;
+    margin-left: -70px;
     margin-top: 50px;
 }
 
