@@ -38,7 +38,7 @@
         <p class="per_2">Partido: </p>
         <%--<p class="res_2">Coalização</p>--%>
         <asp:Label ID="lbl_part" class="res_2" runat="server" Text="Coalização"></asp:Label>
-        <p class="per_3">Número: </p>
+        <p class="per_3">Nu&#769;mero: </p>
         <%--<p class="res_3">38</p>--%>
         <asp:Label ID="lbl_num" class="res_3" runat="server" Text="38"></asp:Label>
         <asp:RadioButton ID="rbd_1" runat="server" Text="Votar nesse candidato" />
@@ -56,7 +56,7 @@
         <p class="per_2">Partido: </p>
         <%--<p class="res_2">Arcas</p>--%>
         <asp:Label ID="lbl_part2" class="res_2" runat="server" Text="Arcas"></asp:Label>
-        <p class="per_3">Número: </p>
+        <p class="per_3">Nu&#769;mero: </p>
         <%--<p class="res_3">38</p>--%>
         <asp:Label ID="lbl_num2" class="res_3" runat="server" Text="38"></asp:Label>
         <asp:RadioButton ID="rbd_2" runat="server" Text="Votar nesse candidato" />
@@ -74,7 +74,7 @@
         <p class="per_2">Partido: </p>
         <%--<p class="res_2">DSR</p>--%>
         <asp:Label ID="lbl_part3" class="res_2" runat="server" Text="DSR"></asp:Label>
-        <p class="per_3">Número: </p>
+        <p class="per_3">Nu&#769;mero: </p>
         <%--<p class="res_3">50</p>--%>
         <asp:Label ID="lbl_num3" class="res_3" runat="server" Text="50"></asp:Label>
         <asp:RadioButton ID="rbd_3" runat="server" Text="Votar nesse candidato" />
@@ -92,7 +92,7 @@
         <p class="per_2">Partido: </p>
         <%--<p class="res_2">Federação</p>--%>
         <asp:Label ID="lbl_part4" class="res_2" runat="server" Text="Federacao"></asp:Label>
-        <p class="per_3">Número: </p>
+        <p class="per_3">Nu&#769;mero: </p>
         <%--<p class="res_3">95</p>--%>
         <asp:Label ID="lbl_num4" class="res_3" runat="server" Text="95"></asp:Label>
         <asp:RadioButton ID="rdb_4" runat="server" Text="Votar nesse candidato" />

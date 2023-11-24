@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="criar_sc.aspx.cs" Inherits="TCC_V2.criar_sc" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="criar_sc.aspx.cs" Inherits="TCC_V2.criar_sc" %>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
             font-family: 'Oxanium', sans-serif;
         }
     </style>
-    <title>Criar votação</title>
+    <title>Criar vota&ccedil;a&#771;o</title>
 </head>
 <body>
     <header class="hedr2">
@@ -30,13 +30,13 @@
         <div class="bar_5" ></div>
         <p class="vota_txt_2" >Cadastrar</p>
     </div>
-    <div class="box_resul_2" >
+    <div class="box_resul_5" >
         <div class="campo_voto_fc_3">
             <form runat="server" >
-                <div class="cria_log" >
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Titulo Votação:</p>  
+                <div class="cria_log_3" >
+                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Titulo Vota&ccedil;a&#771;o:</p>  
                     <%--<input class="user1" type="text" name="Candidato" placeholder="João da Silva">--%>
-                    <asp:TextBox ID="txt_titulo" placeholder="Eleição Presidencial" class="user1" runat="server"></asp:TextBox> <br>
+                    <asp:TextBox ID="txt_titulo" placeholder="Elei&ccedil;a&#771;o Presidencial" class="user1" runat="server"></asp:TextBox> <br>
                     <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Local:</p>  
                     <%--<input class="pass1" type="password" name="Candidato" placeholder="Senador"> --%>
                     <asp:TextBox ID="txt_local" class="pass1" placeholder="Santos" runat="server"></asp:TextBox>  <br>
@@ -50,47 +50,12 @@
                     <%--<input class="user1" type="file" name="Candidato"> <br>--%>
                     <asp:FileUpload ID="FileUpload1" runat="server" style="margin-left: 40px;" /> <br>
                 </div>
-                <%--<div class="cria_log" >
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Nome:</p>  
-                    <input class="user1" type="text" name="Candidato" placeholder="João da Silva"> <br>
-                    <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Cargo:</p>  
-                    <input class="pass1" type="password" name="Candidato" placeholder="Senador"> <br>
-                    <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Partido:</p>  
-                    <input class="pass1" type="password" name="Candidato" placeholder="XYZ"> <br>
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Numero:</p>  
-                    <input class="user1" type="text" name="Candidato" placeholder="xxx"> <br>
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Foto para identificação:</p>
-                    <input class="user1" type="file" name="Candidato"> <br>
-                </div> 
-                <div class="cria_log" >
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Nome:</p>  
-                    <input class="user1" type="text" name="Candidato" placeholder="João da Silva"> <br>
-                    <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Cargo:</p>  
-                    <input class="pass1" type="password" name="Candidato" placeholder="Senador"> <br>
-                    <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Partido:</p>  
-                    <input class="pass1" type="password" name="Candidato" placeholder="XYZ"> <br>
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Numero:</p>  
-                    <input class="user1" type="text" name="Candidato" placeholder="xxx"> <br>
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Foto para identificação:</p>
-                    <input class="user1" type="file" name="Candidato"> <br>
-                </div> 
-                <div class="cria_log" >
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Nome:</p>  
-                    <input class="user1" type="text" name="Candidato" placeholder="João da Silva"> <br>
-                    <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Cargo:</p>  
-                    <input class="pass1" type="password" name="Candidato" placeholder="Senador"> <br>
-                    <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Partido:</p>  
-                    <input class="pass1" type="password" name="Candidato" placeholder="XYZ"> <br>
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Numero:</p>  
-                    <input class="user1" type="text" name="Candidato" placeholder="xxx"> <br>
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Foto para identificação:</p>
-                    <input class="user1" type="file" name="Candidato"> <br>
-                </div> --%>
+                
                 <div class="v_btn_2">
                     <%--<input class="v_btn_" type="checkbox" name="conf"> --%>
                     <asp:CheckBox ID="cbm1" class="v_btn_" runat="server" />
-                    <label style="color: white; margin-left: -150px; margin-top: 10px;" for="conf">Confirmo a criação da votação</label><br> 
-                    <asp:Button ID="btn_upload" class="v_btn_3" runat="server" Text="Criar" />
+                    <label style="color: white; margin-left: -150px; margin-top: 10px;" for="conf">Confirmo a cria&ccedil;a&#771;o da vota&ccedil;a&#771;o</label><br> 
+                    <asp:Button ID="btn_upload" OnClick="btn_upload_Click" class="v_btn_3" runat="server" Text="Criar" />
                     <%--<input class="v_btn_3" type="submit" value="Criar">--%>
                 </div>
             </form>

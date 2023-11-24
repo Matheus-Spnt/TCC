@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="user_sc.aspx.cs" Inherits="TCC_V2.user_sc" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="user_sc.aspx.cs" Inherits="TCC_V2.user_sc" %>
 
 <!DOCTYPE html>
 <html>
@@ -28,14 +28,14 @@
     <div class="vota" >
         <img class="vota_logo" src="../IMG/sparkles.svg" alt="Icone de votação">
         <div class="bar_5" ></div>
-        <p class="vota_txt_2" >Eleição</p>
+        <p class="vota_txt_2" >Elei&ccedil;a&#771;o</p>
         <p class="vota_txt_2" >Cadastrar</p>
     </div>
-    <h2 class="texto_parte1" >Cadastrar Votação</h2>
+    <h2 class="texto_parte1" >Cadastrar Vota&ccedil;a&#771;o</h2>
     <div class="voto_box1" >
         <img class="voto_img" src="" >
         <p class="voto_texto" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing 
+            Clique no bota&#771;o abaixo para criar a vota&ccedil;a&#771;o.
         </p>
         <div class="bar_6" ></div>
         <form action="criar_sc.aspx" target="_self" >
@@ -48,7 +48,7 @@
     <div class="voto_box3" >
         <img class="voto_img" src="" >
         <p class="voto_texto" >
-            Lorem ipsum dolor sit amet, consectetur adipisicing 
+            Clique no bota&#771;o abaixo para cadastrar um Eleitor.
         </p>
         <div class="bar_6" ></div>
         <form action="criar_eleitor.aspx" target="_self" >

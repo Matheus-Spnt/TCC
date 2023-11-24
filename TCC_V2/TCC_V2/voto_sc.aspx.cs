@@ -169,22 +169,196 @@ namespace TCC_V2
             #endregion
         }
 
+        //protected void btn_votar_Click(object sender, EventArgs e)
+        //{
+        //    #region Candidato1
+        //    if (rbd_1.Checked && chb_1.Checked)
+        //    {
+                
+        //        //string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
+        //        //List<MySqlParameter> insertVotoParametros = new List<MySqlParameter>
+        //        //{
+        //        //    new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
+        //        //    new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[0])),
+        //        //    new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[0])),
+        //        //    new MySqlParameter("@EleitorID", usuario1)
+        //        //};
+
+        //        //if (!banco.Execute(insertVotoQuery, insertVotoParametros))
+        //        //{
+        //        //    lblMsg.Text = "Problemas na votação";
+        //        //    banco.Closing();
+        //        //    return;
+        //        //}
+        //        //else
+        //        //{
+        //            string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
+        //            List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+        //            {
+        //                new MySqlParameter("@EleitorID", usuario1),
+        //                new MySqlParameter("@EleicaoID", eleicao1)
+        //            };
+
+        //            if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
+        //            {
+        //                lblMsg.Text = "Problemas na votação";
+        //                banco.Closing();
+        //                return;
+        //            }
+        //            else
+        //            {
+        //                Response.Redirect("~/home_sc.aspx");
+        //            }
+        //        //}
+        //    }
+
+        //    #endregion
+        //    else
+        //    {
+        //        #region Candidato2
+        //        if (rbd_2.Checked && chb_1.Checked)
+        //        {
+        //            //string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
+        //            //List<MySqlParameter> insertVotoParametros2 = new List<MySqlParameter>
+        //            //{
+        //            //    new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
+        //            //    new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[1])),
+        //            //    new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[1])),
+        //            //    new MySqlParameter("@EleitorID", usuario1)
+        //            //};
+
+        //            //if (!banco.Execute(insertVotoQuery, insertVotoParametros2))
+        //            //{
+        //            //    lblMsg.Text = "Problemas na votação";
+        //            //    banco.Closing();
+        //            //    return;
+        //            //}
+        //            //else
+        //            //{
+        //                string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
+        //                List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+        //                {
+        //                    new MySqlParameter("@EleitorID", usuario1),
+        //                    new MySqlParameter("@EleicaoID", eleicao1)
+        //                };
+
+        //                if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
+        //                {
+        //                    lblMsg.Text = "Problemas na votação";
+        //                    banco.Closing();
+        //                    return;
+        //                }
+        //                else
+        //                {
+        //                    Response.Redirect("~/home_sc.aspx");
+        //                }
+        //            //}
+        //        }
+        //        #endregion
+        //        else
+        //        {
+        //            #region Candidato3
+        //            if (rbd_3.Checked && chb_1.Checked)
+        //            {
+        //                //string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
+        //                //List<MySqlParameter> insertVotoParametros3 = new List<MySqlParameter>
+        //                //{
+        //                //    new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
+        //                //    new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[2])),
+        //                //    new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[2])),
+        //                //    new MySqlParameter("@EleitorID", usuario1)
+        //                //};
+
+        //                //if (!banco.Execute(insertVotoQuery, insertVotoParametros3))
+        //                //{
+        //                //    lblMsg.Text = "Problemas na votação";
+        //                //    banco.Closing();
+        //                //    return;
+        //                //}
+        //                //else
+        //                //{
+        //                    string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
+        //                    List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+        //                    {
+        //                        new MySqlParameter("@EleitorID", usuario1),
+        //                        new MySqlParameter("@EleicaoID", eleicao1)
+        //                    };
+
+        //                    if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
+        //                    {
+        //                        lblMsg.Text = "Problemas na votação";
+        //                        banco.Closing();
+        //                        return;
+        //                    }
+        //                    else
+        //                    {
+        //                        Response.Redirect("~/home_sc.aspx");
+        //                    }
+        //                //}
+
+
+
+        //            }
+        //            #endregion
+        //            else
+        //            {
+        //                #region Candidato4
+        //                if (rdb_4.Checked && chb_1.Checked)
+        //                {
+        //                    //string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
+        //                    //List<MySqlParameter> insertVotoParametros4 = new List<MySqlParameter>
+        //                    //{
+        //                    //    new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
+        //                    //    new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[3])),
+        //                    //    new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[3])),
+        //                    //    new MySqlParameter("@EleitorID", usuario1)
+        //                    //};
+
+        //                    //if (!banco.Execute(insertVotoQuery, insertVotoParametros4))
+        //                    //{
+        //                    //    lblMsg.Text = "Problemas na votação";
+        //                    //    banco.Closing();
+        //                    //    return;
+        //                    //}
+        //                    //else
+        //                    //{
+        //                        string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
+        //                        List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+        //                        {
+        //                            new MySqlParameter("@EleitorID", usuario1),
+        //                            new MySqlParameter("@EleicaoID", eleicao1)
+        //                        };
+
+        //                        if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
+        //                        {
+        //                            lblMsg.Text = "Problemas na votação";
+        //                            banco.Closing();
+        //                            return;
+        //                        }
+        //                        else
+        //                        {
+        //                            Response.Redirect("~/home_sc.aspx");
+        //                        }
+        //                    //}
+        //                }
+        //                #endregion
+        //            }
+        //        }
+        //    }       
+        //}
         protected void btn_votar_Click(object sender, EventArgs e)
         {
             #region Candidato1
             if (rbd_1.Checked && chb_1.Checked)
             {
-                
-                string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
-                List<MySqlParameter> insertVotoParametros = new List<MySqlParameter>
+                string updateConfirmaVotoQuery = "UPDATE confirma_voto SET confirma_votar = 1 WHERE id_eleitor = @EleitorID AND id_eleicao = @EleicaoID;";
+                List<MySqlParameter> updateConfirmaVotoParametros = new List<MySqlParameter>
                 {
-                    new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
-                    new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[0])),
-                    new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[0])),
-                    new MySqlParameter("@EleitorID", usuario1)
+                    new MySqlParameter("@EleitorID", usuario1),
+                    new MySqlParameter("@EleicaoID", eleicao1)
                 };
 
-                if (!banco.Execute(insertVotoQuery, insertVotoParametros))
+                if (!banco.Execute(updateConfirmaVotoQuery, updateConfirmaVotoParametros))
                 {
                     lblMsg.Text = "Problemas na votação";
                     banco.Closing();
@@ -192,14 +366,24 @@ namespace TCC_V2
                 }
                 else
                 {
-                    string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
-                    List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+                    Response.Redirect("~/home_sc.aspx");
+                }
+            }
+
+            #endregion
+            else
+            {
+                #region Candidato2
+                if (rbd_2.Checked && chb_1.Checked)
+                {
+                    string updateConfirmaVotoQuery = "UPDATE confirma_voto SET confirma_votar = 1 WHERE id_eleitor = @EleitorID AND id_eleicao = @EleicaoID;";
+                    List<MySqlParameter> updateConfirmaVotoParametros = new List<MySqlParameter>
                     {
                         new MySqlParameter("@EleitorID", usuario1),
                         new MySqlParameter("@EleicaoID", eleicao1)
                     };
 
-                    if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
+                    if (!banco.Execute(updateConfirmaVotoQuery, updateConfirmaVotoParametros))
                     {
                         lblMsg.Text = "Problemas na votação";
                         banco.Closing();
@@ -210,39 +394,20 @@ namespace TCC_V2
                         Response.Redirect("~/home_sc.aspx");
                     }
                 }
-            }
-
-            #endregion
-            else
-            {
-                #region Candidato2
-                if (rbd_2.Checked && chb_1.Checked)
+                #endregion
+                else
                 {
-                    string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
-                    List<MySqlParameter> insertVotoParametros2 = new List<MySqlParameter>
+                    #region Candidato3
+                    if (rbd_3.Checked && chb_1.Checked)
                     {
-                        new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
-                        new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[1])),
-                        new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[1])),
-                        new MySqlParameter("@EleitorID", usuario1)
-                    };
-
-                    if (!banco.Execute(insertVotoQuery, insertVotoParametros2))
-                    {
-                        lblMsg.Text = "Problemas na votação";
-                        banco.Closing();
-                        return;
-                    }
-                    else
-                    {
-                        string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
-                        List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+                        string updateConfirmaVotoQuery = "UPDATE confirma_voto SET confirma_votar = 1 WHERE id_eleitor = @EleitorID AND id_eleicao = @EleicaoID;";
+                        List<MySqlParameter> updateConfirmaVotoParametros = new List<MySqlParameter>
                         {
                             new MySqlParameter("@EleitorID", usuario1),
                             new MySqlParameter("@EleicaoID", eleicao1)
                         };
 
-                        if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
+                        if (!banco.Execute(updateConfirmaVotoQuery, updateConfirmaVotoParametros))
                         {
                             lblMsg.Text = "Problemas na votação";
                             banco.Closing();
@@ -253,38 +418,20 @@ namespace TCC_V2
                             Response.Redirect("~/home_sc.aspx");
                         }
                     }
-                }
-                #endregion
-                else
-                {
-                    #region Candidato3
-                    if (rbd_3.Checked && chb_1.Checked)
+                    #endregion
+                    else
                     {
-                        string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
-                        List<MySqlParameter> insertVotoParametros3 = new List<MySqlParameter>
+                        #region Candidato4
+                        if (rdb_4.Checked && chb_1.Checked)
                         {
-                            new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
-                            new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[2])),
-                            new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[2])),
-                            new MySqlParameter("@EleitorID", usuario1)
-                        };
-
-                        if (!banco.Execute(insertVotoQuery, insertVotoParametros3))
-                        {
-                            lblMsg.Text = "Problemas na votação";
-                            banco.Closing();
-                            return;
-                        }
-                        else
-                        {
-                            string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
-                            List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
+                            string updateConfirmaVotoQuery = "UPDATE confirma_voto SET confirma_votar = 1 WHERE id_eleitor = @EleitorID AND id_eleicao = @EleicaoID;";
+                            List<MySqlParameter> updateConfirmaVotoParametros = new List<MySqlParameter>
                             {
                                 new MySqlParameter("@EleitorID", usuario1),
                                 new MySqlParameter("@EleicaoID", eleicao1)
                             };
 
-                            if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
+                            if (!banco.Execute(updateConfirmaVotoQuery, updateConfirmaVotoParametros))
                             {
                                 lblMsg.Text = "Problemas na votação";
                                 banco.Closing();
@@ -295,56 +442,10 @@ namespace TCC_V2
                                 Response.Redirect("~/home_sc.aspx");
                             }
                         }
-
-
-
-                    }
-                    #endregion
-                    else
-                    {
-                        #region Candidato4
-                        if (rdb_4.Checked && chb_1.Checked)
-                        {
-                            string insertVotoQuery = "INSERT INTO voto (data_voto, id_partido, id_candidato, id_eleitor) VALUES (@DataVoto, @PartidoID, @CandidatoID, @EleitorID);";
-                            List<MySqlParameter> insertVotoParametros4 = new List<MySqlParameter>
-                            {
-                                new MySqlParameter("@DataVoto", DateTime.Now.ToString("yyyy-MM-dd")),
-                                new MySqlParameter("@PartidoID", Convert.ToInt32(guarda_partido[3])),
-                                new MySqlParameter("@CandidatoID", Convert.ToInt32(guarda_candidato[3])),
-                                new MySqlParameter("@EleitorID", usuario1)
-                            };
-
-                            if (!banco.Execute(insertVotoQuery, insertVotoParametros4))
-                            {
-                                lblMsg.Text = "Problemas na votação";
-                                banco.Closing();
-                                return;
-                            }
-                            else
-                            {
-                                string insertConfirmaVotoQuery = "INSERT INTO confirma_voto (id_eleitor, id_eleicao, confirma_votar) VALUES (@EleitorID, @EleicaoID, 1);";
-                                List<MySqlParameter> insertConfirmaVotoParametros = new List<MySqlParameter>
-                                {
-                                    new MySqlParameter("@EleitorID", usuario1),
-                                    new MySqlParameter("@EleicaoID", eleicao1)
-                                };
-
-                                if (!banco.Execute(insertConfirmaVotoQuery, insertConfirmaVotoParametros))
-                                {
-                                    lblMsg.Text = "Problemas na votação";
-                                    banco.Closing();
-                                    return;
-                                }
-                                else
-                                {
-                                    Response.Redirect("~/home_sc.aspx");
-                                }
-                            }
-                        }
                         #endregion
                     }
                 }
-            }       
+            }
         }
     }
 }

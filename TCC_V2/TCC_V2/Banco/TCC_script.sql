@@ -242,13 +242,13 @@ VALUES
 /*select nome_eleitor from eleitor where id_eleitor =2;*/
 
 	/*Votar*/
-/*select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = 1 and cv.confirma_votar = 0 ;*/
+select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = 1 and cv.confirma_votar = 0 ;
 
 	/*Em Andamento*/
 /*select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = 1 and cv.confirma_votar = 1 and e.data_termino is null ;
 
 	/*Finalizado*/
-/*select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = 1 and cv.confirma_votar = 1 and e.data_termino is not null ;*/
+select e.descricao_eleicao, e.id_eleicao, e.titulo, et.id_eleitor, cv.confirma_votar from eleicao e join confirma_voto cv on(e.id_eleicao = cv.id_eleicao) join eleitor et on(cv.id_eleitor = et.id_eleitor) where et.id_eleitor = 1 and cv.confirma_votar = 1 and e.data_termino is not null ;
 
 /*Página Voto*/
 
@@ -262,7 +262,7 @@ VALUES
 
 /*Página Resultados*/
 
-select c.id_candidato, e.id_eleicao, e.titulo from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_eleicao =2;
+/*select c.id_candidato, e.id_eleicao, e.titulo from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_eleicao =2;*/
 
 /*select c.id_candidato, e.id_eleicao, e.titulo from candidato c join eleicao e on(c.id_eleicao = e.id_eleicao) where c.id_eleicao =1;*/
 

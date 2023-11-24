@@ -29,7 +29,7 @@
     <div class="vota" >
         <img class="vota_logo" src="../IMG/sparkles.svg" alt="Icone de votação">
         <div class="bar_5" ></div>
-        <p class="vota_txt_2" >Votações</p>
+        <p class="vota_txt_2" >Vota&ccedil;o&#771;es</p>
         <p class="vota_txt_4" >Resultados</p>
         <!-- <p class="vota_txt_2" >Criar</p> -->
     </div>

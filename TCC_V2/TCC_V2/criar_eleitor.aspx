@@ -27,7 +27,7 @@
     </header>
     <div class="bar_4"></div>
     <div class="vota" >
-        <img class="vota_logo" src="../IMG/sparkles.svg" alt="Icone de votacao">
+        <img class="vota_logo" src="../IMG/sparkles.svg" alt="Icone de vota&ccedil;a&#771;o">
         <div class="bar_5" ></div>
         <p class="vota_txt_2" >Cadastrar</p>
     </div>
@@ -36,16 +36,16 @@
             <form runat="server" >
                 <div class="cria_log" >
                     <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Nome:</p>  
-                    <asp:TextBox class="user1" placeholder="Joao da Silva" ID="cad_user" runat="server"  ></asp:TextBox> <br>
+                    <asp:TextBox class="user1" placeholder="Joa&#771;o da Silva" ID="cad_user" runat="server"  ></asp:TextBox> <br>
                     <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Data Nascimento:</p>  
                     <asp:TextBox class="user1" placeholder="YYYY-DD-MM" ID="cad_user_nasc" runat="server"  ></asp:TextBox> <br>
-                    <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Endereço:</p>  
+                    <p style="margin-top: 5px; margin-left: 40px; margin-bottom: -1px; color:white;">Endere&ccedil;o:</p>  
                     <asp:TextBox class="user1" placeholder="Rua xxxx nºx" ID="cad_user_ender" runat="server"  ></asp:TextBox> <br>
                     <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Titulo de Eleitor:</p>  
                     <asp:TextBox class="user1" placeholder="xxxxxxxxx" ID="cad_user_titulo" runat="server"  ></asp:TextBox> <br>
                     <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Zona Eleitoral:</p>  
                     <asp:TextBox class="user1" placeholder="xxxx" ID="cad_user_zona" runat="server"  ></asp:TextBox> <br>
-                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Seção Eleitoral:</p>  
+                    <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Se&ccedil;a&#771;o Eleitoral:</p>  
                     <asp:TextBox class="user1" placeholder="xxxx" ID="cad_user_sec" runat="server"  ></asp:TextBox> <br>
                     <p style="margin-top: 10px; margin-left: 40px; margin-bottom: -1px; color:white;">Senha:</p>  
                     <asp:TextBox class="pass1" placeholder="******" ID="cad_user_pass1" runat="server"  ></asp:TextBox> <br>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="v_btn_2">
                     <asp:CheckBox ID="cbm1" class="v_btn_" runat="server" />
-                    <label style="color: white; margin-left: -150px; margin-top: 10px;" for="conf">Confirmo a criação do Eleitor</label><br> 
+                    <label style="color: white; margin-left: -150px; margin-top: 10px;" for="conf">Confirmo o cadastro do Eleitor</label><br> 
                     <asp:Button class="btn2" ID="btn_cad" OnClick="btn_cad_Click" runat="server" Text="Cadastrar" />
                 </div>
             </form>

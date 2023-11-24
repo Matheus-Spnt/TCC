@@ -16,6 +16,8 @@ namespace TCC_V2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.ContentType = "text/html; charset=utf-8";
+
             usuario1 = Convert.ToInt32(Session["user"]);
             
             banco = new cls_dado_banco_31682.cls_dado_banco_31682();
@@ -37,5 +39,11 @@ namespace TCC_V2
             #endregion
 
         }
+
+        protected void btn_upload_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("user_sc.aspx");
+        }
+
     }
 }
